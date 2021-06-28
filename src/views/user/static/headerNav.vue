@@ -22,7 +22,7 @@
                   </li>
                 </ul>
                 <div>
-                  <a><button class="btn btn-outline-success mt-5 mt-lg-0 border-2 fw-bold" type="button" @click="loginForm">Login</button></a>
+                  <a><button class="btn btn-outline-success py-1 mt-5 mt-lg-0 border-2 fw-bold" type="button" @click="loginForm">Login</button></a>
                 </div>
                 <div class="times">
                   <i class="fas fa-times" @click="navigate"></i>
@@ -72,9 +72,8 @@ export default {
     color: #007e33;
 }
 
-.nav-item .active{
-    color: #007e33;
-    border-bottom: 3px solid #007e33;
+.active {
+  color: #007e33;
 }
 
 .navbar-brand{
