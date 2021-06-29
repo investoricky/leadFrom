@@ -2,14 +2,15 @@
     
     <section class="px-md-5 header-section" id="home">
           <div class="container">
-              <div class="pe-lg-5 text-left">
+              <div class="pe-lg-5 text-left slideInLeft">
                 <h2 class="mb-4 fw-bold">Get Your<br> <span class="important">Certificate Of Origin</span></h2>
+                
                 <p class="smaller">
                     Have you ever had difficulties getting your certificate of origin from your Local Government?
-                    We are here to take that load off your chest. With myOrigin, you can get yours right at the comfort of your home.
+                    We are here to take that load off your chest. With my<span class="origin">Origin</span>, you can get yours right at the comfort of your home.
                   </p>
                   <div>
-                    <a href="./Register.html"><button class="btn get-btn" type="button">Get Certificate</button></a>
+                    <a href="/userProfile"><button class="btn get-btn" type="button">Get Certificate</button></a>
                   </div>
               </div>
               <div class="d-flex align-items-center justify-content-center my-5 my-lg-0 img">
@@ -51,8 +52,11 @@ export default {
 
 h2{
     font-size: 2.3rem;
+    color: #007E33;
 }
-
+.origin {
+  color: #007e33;
+}
 .important{
     color: yellowgreen;
     font-weight: bolder;
@@ -88,6 +92,36 @@ h2{
   height: 65%;
   border-radius: 0.5rem;
 }
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
 
 @media screen and (max-width: 992px) {
   .header-section{

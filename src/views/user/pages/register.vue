@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>This is the admin Page</h1>
+        <h1>This is a form to register</h1>
     </div>
 </template>
 
@@ -10,7 +10,8 @@ export default {
         return{
 
         }
-    }
+    },
+    
 }
 </script>
 
