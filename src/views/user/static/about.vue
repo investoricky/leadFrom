@@ -38,12 +38,17 @@ export default {
 </script>
 
 <style scoped>
-   .about-section{
+p{
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.about-section{
   background-color: white;
   /* background: linear-gradient(90deg, rgb(99, 179, 99), rgb(0, 100, 0)); */
   color: black;
-  height: 100vh;
+  height: max-content;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .about-section .container{

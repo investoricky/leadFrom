@@ -1,7 +1,6 @@
 <template>
     <div>
         <section class="contact-section" id="contact">
-          <div class="contact">
             <div class="contact-header">
               <h1 class="contact__heading">Contact</h1>
               <p class="contact__subheading">
@@ -23,6 +22,7 @@
                         required
                       />
                     </div>
+
                     <div class="form__sub">
                       <label for="lastname">Last Name <span class="text-danger">*</span></label>
                       <input
@@ -34,6 +34,7 @@
                       />
                     </div>
                   </div>
+
                   <div class="form__sub">
                     <label for="email">EMAIL <span class="text-danger">*</span> </label>
                     <input
@@ -44,6 +45,7 @@
                       required
                     />
                   </div>
+
                   <div class="form__sub">
                     <label for="message">Message <span class="text-danger">*</span></label>
                     <textarea
@@ -52,12 +54,12 @@
                       type="text"
                       required
                       class="message"
-                    ></textarea>
+                    >
+                    </textarea>
                   </div>
                   <button class="btn__form">Send Message</button>
                   </form>
                 </div>
-              </div>
         </section>
     </div>
 </template>
@@ -75,24 +77,19 @@ export default {
 <style scoped>
 .contact-section{
   background: rgb(235, 233, 233);
-  height: max-content;
   padding-bottom: 50px; 
 }
 
 .contact-header{
-  /* margin-bottom: 130px; */
   padding: 2rem;
   padding-top: 4rem;
   color: white;
-  height: 60vh;
-  /* background: linear-gradient(90deg, rgb(0, 100, 0), rgb(99, 179, 99)); */
-  background: linear-gradient(rgba(9, 95, 55, 0.75), rgba(9, 95, 55, 0.75)),
-    url("../images/pexels-kelly-lacy-4372125.jpg") no-repeat center center/cover;
-    
+  height: 400px;
+  background: linear-gradient(rgba(9, 95, 55, 0.8), rgba(9, 95, 55, 0.8)),
+    url("../images/landmark.jpg") no-repeat center center/cover;
 }
 
 .contact__heading {
-  /* font-size: 3rem; */
   margin-bottom: 1.5rem;
   letter-spacing: 0.2rem;
   display: flex;
@@ -112,17 +109,13 @@ export default {
 
 .contact__subheading {
   font-size: 1.2rem;
-  /* font-weight: 300; */
   text-align: center;
-  /* opacity: 0.9; */
-  /* line-height: 2rem; */
 }
 
 
 /* Form  */
 .contact-form {
-  /* transform: skewY(7deg); */
-  width: 50%;
+  width: 50vw;
   margin: auto;
   margin-top: -150px;
   padding: 3rem;
@@ -137,7 +130,7 @@ export default {
 
 .form__name {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto auto;
   grid-column-gap: 1.5rem;
 }
 
@@ -198,20 +191,28 @@ label {
   color: white;
 }
 
-@media screen and (max-width: 992px) {
-.contact-header{
-  height: 40vh;
+@media screen and (max-width: 1200px) {
+.contact-form{
+  width: 70vw;
+  padding: 1.5rem;
+}
 }
 
-  .contact-form{
+@media screen and (max-width: 992px) {
+.contact-form{
   width: 80vw;
   padding: 1.5rem;
+}
+
+.form__name {
+  display: flex;
+  flex-direction: column;
 }
 }
 
 @media screen and (max-width: 556px){
 .contact-header{
-  height: 48vh;
+  height: 400px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -235,13 +236,8 @@ label{
 
 
 .form__name {
-  display: grid;
-  grid-template-columns: auto;
-  grid-column-gap: 0;
-}
-
-.form__sub{
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 }
 
