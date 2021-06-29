@@ -48,7 +48,7 @@
                         <p class="firstName ml-auto px-5 py-2 text-muted">Payment Status</p>
                         <p class="nameBorder text py-2 text-muted">Not Paid</p>
                     </div>
-                    <div class="px-5  text-center"><router-link to="/" class="getCertificateLink px-5 py-2">Get Certifcate</router-link></div>
+                    <div class="px-5  text-center"><router-link to="/firstStep" class="getCertificateLink px-5 py-2">Get Certifcate</router-link></div>
                 </div>
             </div>
         </div>
