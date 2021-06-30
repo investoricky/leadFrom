@@ -10,7 +10,7 @@
                     We are here to take that load off your chest. With my<span class="origin">Origin</span>, you can get yours right at the comfort of your home.
                   </p>
                   <div>
-                    <a href="/userProfile"><button class="btn get-btn" type="button">Get Certificate</button></a>
+                    <router-link to="/userProfile"><button class="btn get-btn" type="button">Get Certificate</button></router-linkn>
                   </div>
               </div>
               <div class="d-flex align-items-center justify-content-center my-5 my-lg-0 img">
