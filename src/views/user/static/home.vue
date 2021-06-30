@@ -3,8 +3,8 @@
     <section class="px-md-5 header-section" id="home">
           <div class="container">
               <div class="pe-lg-5 text-left slideInLeft">
-                <!-- <h2 class="mb-4 fw-bold">Get Your <span class="important">Certificate Of Origin</span> From Anywhere In The World</h2> -->
-                <h2 class="mb-4 fw-bold">Welcome</h2>
+                <h2 class="mb-4 fw-bold">Get Your<br> <span class="important">Certificate Of Origin</span></h2>
+                
                 <p class="smaller">
                     Have you ever had difficulties getting your certificate of origin from your Local Government?
                     We are here to take that load off your chest. With my<span class="origin">Origin</span>, you can get yours right at the comfort of your home.

@@ -102,6 +102,12 @@ export default {
 </script>
 
 <style scoped>
+h5{
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .faq-section{
   background-color: rgb(235, 233, 233);
   color: black;
