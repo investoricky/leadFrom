@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/user/index.vue'
 import userProfile from '../views/user/pages/userProfile.vue'
+import login from '../views/user/pages/register.vue'
 import firstStep from '../views/user/verification/firstStep.vue'
 import secondStep from '../views/user/verification/secondStep.vue'
 import thirdStep from '../views/user/verification/thirdStep.vue'
@@ -18,6 +19,11 @@ const routes = [{
         path: '/userProfile',
         name: 'userProfile',
         component: userProfile
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: login
     },
     {
         path: '/firstStep',

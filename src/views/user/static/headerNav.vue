@@ -22,7 +22,8 @@
                   </li>
                 </ul>
                 <div>
-                  <a><button class="btn btn-outline-success py-1 mt-5 mt-lg-0 border-2 fw-bold" type="button" @click="loginForm">Login</button></a>
+                  <router-link to="/login">
+                    <button class="btn btn-outline-success py-1 mt-5 mt-lg-0 border-2 fw-bold" type="button" @click="loginForm">Login</button></router-link>
                 </div>
                 <div class="times">
                   <i class="fas fa-times" @click="navigate"></i>
