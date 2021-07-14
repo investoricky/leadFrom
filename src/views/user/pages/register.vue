@@ -53,7 +53,16 @@
                 <a href="#" class=""> <small> Forgot password?</small></a>
               </div>
               <div class="button inputBox">
-                <button class="login">Login</button>
+                <button class="login" type="submit">
+                  <!-- <div class="spinner-border" role="status"> -->
+                  <span
+                    class="visually-hidde spinner-border"
+                    role="status"
+                    v-if="loginspinner"
+                  ></span>
+                  <!-- </div> -->
+                  <span v-else>Sign Up</span>
+                </button>
               </div>
               <div class="text signUpText">
                 Don't have an account? <label for="flip">Sign up now</label>
@@ -70,8 +79,8 @@
                   <i class="fas fa-user"></i>
                   <input
                     type="text"
-                    placeholder="First name"
-                    v-model="signUpDetails.name"
+                    placeholder="Full name"
+                    v-model="signup.name"
                     required
                   />
                 </div>
@@ -89,7 +98,7 @@
                   <input
                     type="email"
                     placeholder="Email"
-                    v-model="signUpDetails.email"
+                    v-model="signup.email"
                     required
                   />
                 </div>
@@ -98,7 +107,7 @@
                   <input
                     type="password"
                     placeholder="Password"
-                    v-model="signUpDetails.password"
+                    v-model="signup.password"
                     required
                   />
                 </div>
@@ -108,7 +117,7 @@
                     type="password"
                     placeholder="Confirm password"
                     required
-                    v-model="signUpDetails.password_confirmation"
+                    v-model="signup.password_confirmation"
                   />
                 </div>
                 <div class="button inputBox">
@@ -135,8 +144,8 @@
         </div>
       </form>
     </div>
-    <div class="error" v-if="signUpDetails.showError">
-      {{ signUpDetails.errorMsg }}
+    <div class="error" v-if="showError">
+      {{ errorMsg }}
     </div>
   </div>
 </template>
@@ -149,21 +158,22 @@ export default {
         email: null,
         password: null,
       },
-      password: "fa fa-eye-slash",
-      passwordType: "password",
-      spinner: false,
-      signUpDetails: {
+      signup: {
         name: "",
         email: "",
         password: "",
         password_confirmation: "",
       },
-
+      password: "fa fa-eye-slash",
+      passwordType: "password",
+      spinner: false,
+      loginspinner: false,
       showError: false,
       errorMsg: "",
     };
   },
   methods: {
+    //Function for changing eye icon and password field
     changeIcon: function () {
       if (this.password === "fa fa-eye-slash") {
         this.password = "fa fa-eye";
@@ -173,8 +183,11 @@ export default {
         this.passwordType = "password";
       }
     },
+
+    // Login Function
     login: async function () {
       try {
+        this.loginspinner = true;
         // Creating user details holder and assigning it's value to input details
         const credentials = {
           email: this.userLogin.email,
@@ -182,91 +195,130 @@ export default {
         };
 
         // getting a response from the Login Api
-        const response = await this.axios.post(
-          "https://leadfrom-api-app.herokuapp.com/api/login",
-          credentials
-        );
-
-        // dispatching user login details to store
-        this.$store.dispatch("login", { token, user });
+        const response = await this.axios.post("login", credentials);
+        console.log(response);
 
         // getting user details and token
         const token = response.data.token;
         const user = response.data.user;
+        console.log(user);
+        console.log(token);
 
-        // conditional statement if user is found in the database
-        if (response.data.message == "Invalid Login Credentials") {
-          //sweetAlert2 mixin integration
-          const Toast = this.$swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            background: "#c5c5c5",
-            padding: "1px 5px",
-            didOpen: (toast) => {
-              toast.addEventListener("mouseenter", this.$swal.stopTimer);
-              toast.addEventListener("mouseleave", this.$swal.resumeTimer);
-            },
-          });
+        // dispatching user login details to store
+        // localStorage.setItem("user", JSON.stringify(user));
+        // localStorage.setItem("token", token);
 
+        //store
+        this.$store.dispatch("login", { token, user });
+        this.$store.dispatch("login", token);
+
+        //Toast mixin
+        const Toast = this.$swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          background: "#c5c5c5",
+          padding: "1px 5px",
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", this.$swal.stopTimer);
+            toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+          },
+        });
+
+        // conditional statement if user is found in the response
+        if (response.data.message) {
+          this.loginspinner = false;
           //triggering the sweetAlert
           Toast.fire({
             icon: "error",
-            title: "<small>Incorrect username or password</small>",
+            title: `<small>${response.data.message}</small>`,
             background: "#c5c5c5",
           });
         } else {
-          //condition to run if user is found in the database
-          // Login Code
-
           //SweetAlert Code
           this.$swal.fire({
             position: "top-center",
             icon: "success",
             title: "<small>Login Successful</small>",
             showConfirmButton: false,
-            timer: 3500,
+            timer: 2500,
           });
-
           this.$router.push("/userProfile");
         }
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        this.loginspinner = false;
+        console.log(error);
+        const errorMsg = error.response.data.errors.email[0];
+        console.log(errorMsg);
       }
     },
-    signUp: async function () {
-      //   if (this.signUpDetails.password == this.signUpDetails.comfirmPassword) {
-      //     alert(this.signUpDetails.fName);
-      //   } else {
-      //     this.signUpDetails.showError = true;
-      //     this.signUpDetails.errorMsg = "Input Passwords that match";
-      //     setTimeout(() => {
-      //       this.signUpDetails.showError = false;
-      //       this.signUpDetails.errorMsg = "";
-      //     }, 4000);
-      //   }
+    async signUp() {
+      const data = {
+        name: this.signup.name,
+        email: this.signup.email,
+        password: this.signup.password,
+        password_confirmation: this.signup.password_confirmation,
+      };
+
+      //Toast function for default styled alert
+      const Toast = this.$swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "#c5c5c5",
+        padding: "1px 5px",
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", this.$swal.stopTimer);
+          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+        },
+      });
+
+      //Toast function for successful sign up alert
+      const Toast2 = this.$swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "green",
+        padding: "1px 5px",
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", this.$swal.stopTimer);
+          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+        },
+      });
       try {
         this.spinner = true;
-        let response = await this.axios.post(
-          "https://leadfrom-api-app.herokuapp.com/api/register",
-          this.signUpDetails
-        );
+        let response = await this.axios.post("register", data);
+
+        const user = response.data.user;
+        const token = response.data.token;
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("jwt", JSON.stringify(token));
+
+        //Trigger toast alert for successful sign up
+        Toast2.fire({
+          icon: "success",
+          iconColor: "green",
+          title: `<small>Welcome ${response.data.user.name}</small>`,
+          background: "#fff",
+        });
+
         console.log(response);
-        let user = response.data.user;
-        let token = response.data.token;
-
-        // this.$auth.$storage.setLocalStorage("user", user);
-        // this.$auth.$storage.setLocalStorage("jwt", token);
-        // this.$auth.loginWith("local", { data: this.signup });
-        console.log(token);
-        console.log(user);
-
         this.$router.push("/userProfile");
-      } catch (err) {
+      } catch (error) {
         this.spinner = false;
-        console.log(err);
-        alert(err);
+        let errorMsg = error.response.data.errors.email[0];
+
+        console.log(error);
+
+        //triggering the sweetAlert
+        Toast.fire({
+          icon: "error",
+          title: `<small>${errorMsg}</small>`,
+          background: "#c5c5c5",
+        });
       }
     },
   },

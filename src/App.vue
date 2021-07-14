@@ -1,8 +1,25 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
+    <h1>{{ tok }}</h1>
+    <p>{{ user }}</p>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      tok: "",
+      user: "",
+    };
+  },
+  mounted() {
+    this.tok = this.$store.getters.isLoggedIn;
+    this.user = this.$store.getters.getUser;
+  },
+};
+</script>
 
 <style>
 #app {
@@ -25,20 +42,24 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-h1, h2, h3, h4{
-  font-family: 'Merriweather', serif;
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Merriweather", serif;
+}
 
-  p, h5{
-     font-family: 'Montserrat', sans-serif; 
-     font-weight: 500;
-  }
+p,
+h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
 
-  a{
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  .btn{
-    font-family: 'Ubuntu', sans-serif;
-  }
+.btn {
+  font-family: "Ubuntu", sans-serif;
+}
 </style>
