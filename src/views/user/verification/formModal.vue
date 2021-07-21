@@ -525,9 +525,8 @@
       </div>
     </div>
   </div>
-</template>
-
-<script src="./flutterWave.js"></script>
+</template>  
+<script src="https://checkout.flutterwave.com/v3.js"></script>
 <script>
 export default {
   data() {
@@ -638,7 +637,7 @@ export default {
     submitForm(e) {
       e.preventDefault();
       FlutterwaveCheckout({
-        public_key: "FLWPUBK-af7122f74afcd0b75a449e9b27e1c4c4-X",
+        public_key: "FLWPUBK_TEST-17d61118dad1cc2518d8235b90003f78-X",
         tx_ref: "LEADFROM" + Math.floor(Math.random() * 1000000000 + 1),
         amount: 200,
         currency: "NGN",

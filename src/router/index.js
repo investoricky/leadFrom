@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/user/index.vue'
 import userProfile from '../views/user/pages/userProfile.vue'
 import login from '../views/user/pages/register.vue'
-import preview from '../views/user/verification/preview.vue'
+
 
 Vue.use(VueRouter)
 
@@ -23,11 +23,7 @@ const routes = [{
     component: login
 },
 
-{
-    path: '/preview',
-    name: 'preview',
-    component: preview
-},
+
 ]
 
 const router = new VueRouter({
