@@ -1,0 +1,104 @@
+button.btn.sw-btn-prev {
+    /* background-color: rgba(255, 0, 0, 0.541) !important; */
+    /* color: #000 !important; */
+}
+
+button.btn.sw-btn-next {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+a.nav-link.inactive.active {
+    /* background-color: rgba(255, 0, 0, 0.541) !important; */
+}
+
+a.nav-link.inactive.active::after, a.nav-link.inactive.active::before {
+    /* background-color: #fff !important; */
+    /* border-color: rgba(255, 0, 0, 0.541) !important; */
+}
+
+.btn-success {
+    background-color: #28a745 !important;
+}
+
+h5.form-heading {
+    position: relative;
+    width: max-content;
+    margin: 0px auto;
+}
+
+h5.form-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    width: 100%;
+    height: 3px;
+    background-color: green;
+}
+
+.certificatePreview {
+    /* background: url("/src/assets/images/certOne.png") center center/cover !important; */
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.preview {
+    position: relative;
+}
+
+.userDataDetails {
+    font-family: 'Miniver', cursive;
+    position: absolute;
+    padding: 1rem;
+    color: #000;
+    top: 9rem;
+    /* background-color: aquamarine; */
+    width: 80%;
+    right: 0;
+}
+
+.userDataDetails h6.certify {
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 1rem 0;
+}
+
+.certificatePreview img {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.info p {
+    margin-bottom: .3rem;
+    font-size: smaller;
+    color: rgba(255, 0, 0, 0.541);
+}
+
+@media (max-width:990px) {
+    .userDataDetails {
+        top: 3rem;
+    }
+    .userDataDetails h6.certify {
+        font-weight: bold;
+        font-size: large;
+        padding: .5rem 0;
+    }
+    .userDataDetails p {
+        font-size: small;
+    }
+}
+
+@media (max-width:490px) {
+    .userDataDetails {
+        width: 100%;
+    }
+    .certificatePreview img {
+        height: 380px;
+    }
+    .userDataDetails p {
+        font-size: smaller;
+    }
+}

@@ -186,6 +186,19 @@ export default {
 
     // Login Function
     login: async function () {
+      //Toast function for successful login alert
+      const Toast2 = this.$swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "green",
+        padding: "1px 5px",
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", this.$swal.stopTimer);
+          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+        },
+      });
       try {
         this.loginspinner = true;
         // Creating user details holder and assigning it's value to input details
@@ -195,14 +208,15 @@ export default {
         };
 
         // getting a response from the Login Api
-        const response = await this.axios.post("login", credentials);
+        var response = await this.axios.post("login", credentials);
+        // const errorMsg = response.data.message;
         console.log(response);
 
         // getting user details and token
         const token = response.data.token;
+        console.log(token);
         const user = response.data.user;
         console.log(user);
-        console.log(token);
 
         // dispatching user login details to store
         // localStorage.setItem("user", JSON.stringify(user));
@@ -212,7 +226,20 @@ export default {
         this.$store.dispatch("login", { token, user });
         this.$store.dispatch("login", token);
 
-        //Toast mixin
+        //sweet alert
+        Toast2.fire({
+          icon: "success",
+          iconColor: "green",
+          title: `<small>Welcome ${response.data.user.name}</small>`,
+          background: "#fff",
+        });
+
+        //Push to profile page
+        this.$router.push("/userProfile");
+      } catch (error) {
+        this.loginspinner = false;
+
+        // Toast mixin
         const Toast = this.$swal.mixin({
           toast: true,
           position: "top-end",
@@ -226,33 +253,15 @@ export default {
           },
         });
 
-        // conditional statement if user is found in the response
-        if (response.data.message) {
-          this.loginspinner = false;
-          //triggering the sweetAlert
-          Toast.fire({
-            icon: "error",
-            title: `<small>${response.data.message}</small>`,
-            background: "#c5c5c5",
-          });
-        } else {
-          //SweetAlert Code
-          this.$swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "<small>Login Successful</small>",
-            showConfirmButton: false,
-            timer: 2500,
-          });
-          this.$router.push("/userProfile");
-        }
-      } catch (error) {
-        this.loginspinner = false;
-        console.log(error);
-        const errorMsg = error.response.data.errors.email[0];
-        console.log(errorMsg);
+        //triggering the sweetAlert
+        Toast.fire({
+          icon: "error",
+          title: `<small>${response.data.message}</small>`,
+          background: "#c5c5c5",
+        });
       }
     },
+
     async signUp() {
       const data = {
         name: this.signup.name,
@@ -310,7 +319,6 @@ export default {
       } catch (error) {
         this.spinner = false;
         let errorMsg = error.response.data.errors.email[0];
-
         console.log(error);
 
         //triggering the sweetAlert

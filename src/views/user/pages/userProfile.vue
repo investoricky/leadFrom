@@ -56,11 +56,7 @@
             <p class="firstName ml-auto px-5 py-2 text-muted">Payment Status</p>
             <p class="nameBorder text py-2 text-muted">Not Paid</p>
           </div>
-          <div class="px-5 text-center">
-            <router-link to="/firstStep" class="getCertificateLink px-5 py-2"
-              >Get Certifcate</router-link
-            >
-          </div>
+          <modalBtn />
         </div>
       </div>
     </div>
@@ -68,11 +64,23 @@
 </template>
 
 <script>
+import modalBtn from "../verification/formModal.vue";
 export default {
   data() {
     return {
       user: null,
     };
+  },
+  mounted() {
+    if (localStorage.getItem("reloaded")) {
+      // The page was just reloaded. Clear the value from local storage
+      // so that it will reload the next time this page is visited.
+      localStorage.removeItem("reloaded");
+    } else {
+      // Set a flag so that we know not to reload the page twice.
+      localStorage.setItem("reloaded", "1");
+      location.reload();
+    }
   },
 
   methods: {
@@ -88,6 +96,9 @@ export default {
         console.log(error);
       }
     },
+  },
+  components: {
+    modalBtn,
   },
 };
 </script>

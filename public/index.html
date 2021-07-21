@@ -22,7 +22,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../src/assets/static/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Miniver&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/app.css">
 </head>
+
 
 <body>
     <noscript>
@@ -46,6 +52,100 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="http://1000hz.github.io/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js"
+        type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Finish')
+                .addClass('btn btn-success finish-btn d-none')
+
+
+            // var btnCancel = $('<button></button>').text('Cancel')
+            //     .addClass('btn btn-danger cancel-btn')
+            //     .on('click', function () { $('#smartwizard').smartWizard("reset"); });
+
+
+
+
+
+
+            $('#stepwizard').smartWizard(
+                {
+                    theme: "arrows",
+                    darkMode: false,
+                    autoAdjustHeight: true,
+                    transitionEffect: 'fade',
+                    transitionSpeed: '400',
+                    backButtonSupport: false,
+                    labelFinish: 'Finish',
+                    includeFinishButton: false,   // Add the finish button
+                    toolbarSettings: {
+                        toolbarPosition: 'bottom', // none, top, bottom, both
+                        toolbarButtonPosition: 'right', // left, right, center
+                        showNextButton: true, // show/hide a Next button
+                        showPreviousButton: true, // show/hide a Previous button
+                        toolbarExtraButtons: [btnFinish] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
+                    },
+                    anchorSettings: {
+                        anchorClickable: false, // Enable/Disable anchor navigation
+                        enableAllAnchors: false, // Activates all anchors clickable all times
+                        markDoneStep: true, // Add done state on navigation
+                        markAllPreviousStepsAsDone: false, // When a step selected by url hash, all previous steps are marked done
+                        removeDoneStepOnNavigateBack: false, // While navigate back done step after active step will be cleared
+                        enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+                    },
+                }
+            );
+
+            $("#stepwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection, stepPosition, currentStepIndex, nextStepIndex) {
+                var elmForm = $(".form-step-" + stepNumber);
+                if (stepDirection === 'forward' && elmForm) {
+                    elmForm.validator('validate');
+                    var elmErr = elmForm.children('.has-error')
+                    if (elmErr && elmErr.length > 0) {
+                        alert(99)
+                        return
+
+                    }
+                }
+                return true
+                // return confirm("Do you want to leave the step " + currentStepIndex + "?" + stepNumber);
+            })
+            // Step show event
+            $("#stepwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection, stepPosition, currentStepIndex, nextStepIndex) {
+                $(".sw-btn-prev").addClass('d-none');
+                $(".sw-btn-next").removeClass('disabled');
+                $(".finish-btn").addClass('d-none');
+                if (stepPosition == "first") {
+                    $(".sw-btn-prev").addClass('disabled');
+
+                } else if (stepPosition === 'last') {
+                    $(".sw-btn-next").addClass('d-none');
+                    $(".finish-btn").removeClass('d-none');
+                    $(".sw-btn-prev").removeClass('d-none');
+                    $(".sw-btn-prev").removeClass('disabled');
+                } else {
+                    $(".sw-btn-prev").removeClass('d-none');
+                    $(".sw-btn-prev").removeClass('disabled');
+                    $(".sw-btn-next").removeClass('d-none');
+                }
+            });
+
+
+
+        });
+    </script>
+
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+
+
 </body>
 
 </html>
