@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light px-md-5">
+  <nav class="navbar navbar-expand-lg sticky-top bg-light px-md-5">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#home"
-        >my<span class="brand-span">Origin</span></a
+        >LEAD<span class="brand-span">FROM</span></a
       >
       <button
         class="navbar-toggler bg-transparent"
@@ -37,12 +37,12 @@
               >About</a
             >
           </li>
-          <li class="nav-item mt-3 mt-lg-0 me-lg-5">
+          <!-- <li class="nav-item mt-3 mt-lg-0 me-lg-5">
             <a class="nav-link px-0 pb-0" href="#faq" @click="navigate">FAQ</a>
-          </li>
+          </li> -->
           <li class="nav-item mt-3 mt-lg-0">
             <a class="nav-link px-0 pb-0" href="#contact" @click="navigate"
-              >Contact</a
+              >Services</a
             >
           </li>
         </ul>
@@ -53,7 +53,7 @@
               type="button"
               @click="loginForm"
             >
-              Login
+              Get Started
             </button></router-link
           >
         </div>
