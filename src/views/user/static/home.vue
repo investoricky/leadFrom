@@ -1,42 +1,47 @@
 <template>
-    
-    <section class="px-md-5 header-section" id="home">
-          <div class="container">
-              <div class="pe-lg-5 text-left slideInLeft">
-                <h2 class="mb-4 fw-bold">Get Your<br> <span class="important">Certificate Of Origin</span></h2>
-                
-                <p class="smaller">
-                    Have you ever had difficulties getting your certificate of origin from your Local Government?
-                    We are here to take that load off your chest. With my<span class="origin">Origin</span>, you can get yours right at the comfort of your home.
-                  </p>
-                  <div>
-                    <router-link to="/userProfile"><button class="btn get-btn" type="button">Get Certificate</button></router-link>
-                  </div>
-              </div>
-              <div class="d-flex align-items-center justify-content-center my-5 my-lg-0 img">
-                  <img src="../images/Free-Girl-Scout-Certificate-of-Appreciation-Template.jpeg" alt="" class="cert">
+  <div class="home">
+    <section class="px-md-5 header-section" :style="{backgroundImage:'url(' + require('@/assets/images/' + img + '.jpg') + ')'}" id="home">
+      <div class="container">
+          <div class="pe-lg-5 text-left slideInLeft">
+            <h2 class="mb-4 fw-bold">INTEGRATED LOCAL GOVERNMENT PORTAL</h2>
+            
+            <p class="smaller text-dark">
+                Have you ever had difficulties getting your certificate of origin from your Local Government?
+                We are here to take that load off your chest. With the<span class="origin">PLATFROM</span>, you can get yours right at the comfort of your home.
+              </p>
+              <div class="get-btn-wrap">
+                <router-link to="/login"><button class="btn get-btn py-1" type="button">Get Certificate</button></router-link>
               </div>
           </div>
+          <div class="d-flex align-items-center justify-content-center my-5 my-lg-0 img">
+              <img src="@/assets/animation.gif" alt="" class="cert">
+          </div>
+      </div>
     </section>
-    
+  </div>
 </template>
 
 <script>
 export default {
     data(){
         return{
-
+          img: 'david-rotimi-LxENUKJXh_k-unsplash'
         }
     }
 }
 </script>
 
 <style scoped>
+/* .home {
+  background: #F1F8E9;
+} */
 .header-section{
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(97, 68, 68, 0.7), rgba(0, 0, 0, 1)),
-  url("../images/david-rotimi-LxENUKJXh_k-unsplash.jpg") no-repeat center center/cover;
+  background: no-repeat center center/cover;
+  background-blend-mode: overlay;
+  background-color: rgba(97, 68, 68, 0.309);
+  /* opacity: 1; */
   color: white;
   display: flex;
   align-items: center;
@@ -52,20 +57,20 @@ export default {
 
 h2{
     font-size: 2.3rem;
-    color: #007E33;
+    color: #1c924b;
 }
 .origin {
-  color: #007e33;
+  color: #1c924b;
 }
 .important{
-    color: yellowgreen;
+    color: #1c924b;
     font-weight: bolder;
 }
 
 .smaller{
     font-size: 1rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    color: #79879A;
 }
 
 .btn{
@@ -74,12 +79,13 @@ h2{
 }
 
 .get-btn{
-  background-color: #007e33;
+  background-color: #1c924b;
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.6rem 1.5rem;
   margin-top: 1.5rem;
+  /* border-radius: 30px; */
 } 
 
 .get-btn:hover{
@@ -137,13 +143,21 @@ h2{
 }
 
 @media screen and (max-width: 556px){
-    .cert{
-      display: none;
-    }
+  .cert{
+    display: none;
+  }
 
   h2{
-  font-size: 1.85rem;
+  font-size: 2rem;
   line-height: 2.4rem;
-}
+  text-align: center;
+  }
+  p {
+    text-align: center;
+    font-size: 13px !important;
+  }
+  .get-btn-wrap {
+    text-align: center !important;
+  }
 }
 </style>
