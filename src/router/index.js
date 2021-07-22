@@ -16,30 +16,59 @@ const routes = [{
     component: Home
 },
 {
-    path: '/userProfile',
-    name: 'userProfile',
-    component: userProfile
-},
-{
-    path: '/certificateOfOriginPage',
-    name: 'certificateOfOriginPage',
-    component: certificateOfOriginPage
-},
-{
-    path: '/taxPaymentPage',
-    name: 'taxPaymentPage',
-    component: taxPaymentPage
-},
-{
-    path: '/birthCertificatePage',
-    name: 'birthCertificatePage',
-    component: birthCertificatePage
-},
-{
     path: '/login',
     name: 'login',
     component: login
 },
+{
+    path: '/userProfile',
+    name: 'userProfile',
+    component: userProfile,
+    beforeEnter: (to, from, next) => {
+        if (localStorage.getItem("user")) {
+            next()
+        } else {
+            next("/login")
+        }
+    }
+},
+{
+    path: '/certificateOfOriginPage',
+    name: 'certificateOfOriginPage',
+    component: certificateOfOriginPage,
+    beforeEnter: (to, from, next) => {
+        if (localStorage.getItem("user")) {
+            next()
+        } else {
+            next("/login")
+        }
+    }
+},
+{
+    path: '/taxPaymentPage',
+    name: 'taxPaymentPage',
+    component: taxPaymentPage,
+    beforeEnter: (to, from, next) => {
+        if (localStorage.getItem("user")) {
+            next()
+        } else {
+            next("/login")
+        }
+    }
+},
+{
+    path: '/birthCertificatePage',
+    name: 'birthCertificatePage',
+    component: birthCertificatePage,
+    beforeEnter: (to, from, next) => {
+        if (localStorage.getItem("user")) {
+            next()
+        } else {
+            next("/login")
+        }
+    }
+},
+
 
 
 ]

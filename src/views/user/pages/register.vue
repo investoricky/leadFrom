@@ -219,8 +219,8 @@ export default {
         console.log(user);
 
         // dispatching user login details to store
-        // localStorage.setItem("user", JSON.stringify(user));
-        // localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("token", token);
 
         //store
         this.$store.dispatch("login", { token, user });

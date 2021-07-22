@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-5 text-center">
+    <div class="text-center button-width">
       <button
         type="button"
         class="btn btn-success btn-lg"
@@ -665,6 +665,9 @@ export default {
 
 
 <style scoped>
+.button-width {
+  width: max-content;
+}
 .tab-content {
   display: block;
   min-height: 530px;

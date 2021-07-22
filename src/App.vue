@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <router-view />
-    <h1>{{ tok }}</h1>
-    <p>{{ user }}</p>
+    <!-- <h1>{{ tok }}</h1>
+    <p>{{ user }}</p> -->
   </div>
 </template>
 

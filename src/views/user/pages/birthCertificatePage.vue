@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <nav class="navbar navbar-expand-sm navbar-light sticky-top">
-      <a class="navbar-brand ml-5" href="#">LEAD<span class="origin">FROM</span></a>
+      <a class="navbar-brand ml-5" href="#"
+        >LEAD<span class="origin">FROM</span></a
+      >
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item ml-4">
           <div class="dropdown">
@@ -19,9 +21,7 @@
       <div class="userDetailSection">
         <div class="userInfo ml-5">
           <h3>Birth Certificate</h3>
-          <p class="pt-3">
-            Service not yet Implemented
-          </p>
+          <p class="pt-3">Service not yet Implemented</p>
           <!-- <modalBtn /> -->
         </div>
       </div>
@@ -29,32 +29,47 @@
         <h4 class="text-dark">Select a Service</h4>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/certificate-icon.png" alt="image">
+            <img src="@/assets/certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Certificate of Origin</h5>
-            <p class="pt-3">Get your Certificate of Origin from your Local Government anywhere you are with ease</p>
-            <a @click="certificateOfOriginPage" href="" class="text-primary">get certificate</a>
+            <p class="pt-3">
+              Get your Certificate of Origin from your Local Government anywhere
+              you are with ease
+            </p>
+            <a @click="certificateOfOriginPage" href="" class="text-primary"
+              >get certificate</a
+            >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/notarization-icon.png" alt="image">
+            <img src="@/assets/notarization-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Tax Payment</h5>
-            <p class="pt-3">Get your Certificate of Origin from your Local Government anywhere you are with ease</p>
-            <a @click="taxPaymentPage" href="" class="text-primary">get certificate</a>
+            <p class="pt-3">
+              Get your Certificate of Origin from your Local Government anywhere
+              you are with ease
+            </p>
+            <a @click="taxPaymentPage" href="" class="text-primary"
+              >get certificate</a
+            >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/birth-certificate-icon.png" alt="image">
+            <img src="@/assets/birth-certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Nigerian Birth Certificate</h5>
-            <p class="pt-3">Get your Birth Certificate from your Local Government anywhere you are with ease</p>
-            <a @click="birthCertificatePage" href="" class="text-primary">get certificate</a>
+            <p class="pt-3">
+              Get your Birth Certificate from your Local Government anywhere you
+              are with ease
+            </p>
+            <a @click="birthCertificatePage" href="" class="text-primary"
+              >get certificate</a
+            >
           </div>
         </div>
       </div>
@@ -71,15 +86,15 @@ export default {
     };
   },
   mounted() {
-    if (localStorage.getItem("reloaded")) {
-      // The page was just reloaded. Clear the value from local storage
-      // so that it will reload the next time this page is visited.
-      localStorage.removeItem("reloaded");
-    } else {
-      // Set a flag so that we know not to reload the page twice.
-      localStorage.setItem("reloaded", "1");
-      location.reload();
-    }
+    // if (localStorage.getItem("reloaded")) {
+    // The page was just reloaded. Clear the value from local storage
+    // so that it will reload the next time this page is visited.
+    // localStorage.removeItem("reloaded");
+    // } else {
+    // Set a flag so that we know not to reload the page twice.
+    // localStorage.setItem("reloaded", "1");
+    // location.reload();
+    // }
   },
 
   methods: {
@@ -95,15 +110,24 @@ export default {
         console.log(error);
       }
     },
-      certificateOfOriginPage(){
-        this.$router.replace({path: '/certificateOfOriginPage', query:{name:'next'}})
-      },
-      taxPaymentPage(){
-        this.$router.replace({path: '/taxPaymentPage', query:{name:'next'}})
-      },
-      birthCertificatePage(){
-        this.$router.replace({path: '/birthCertificatePage', query:{name:'next'}})
-      },
+    certificateOfOriginPage() {
+      this.$router.replace({
+        path: "/certificateOfOriginPage",
+        query: { name: "next" },
+      });
+    },
+    taxPaymentPage() {
+      this.$router.replace({
+        path: "/taxPaymentPage",
+        query: { name: "next" },
+      });
+    },
+    birthCertificatePage() {
+      this.$router.replace({
+        path: "/birthCertificatePage",
+        query: { name: "next" },
+      });
+    },
   },
   components: {
     // modalBtn,
@@ -239,10 +263,11 @@ a,
   border: none;
 }
 .certificateWrap img {
-  width: 5rem;
+  width: 3rem;
   background-color: #f7f5ee;
 }
-.certificateWrap p, a {
+.certificateWrap p,
+a {
   font-size: 14px;
 }
 .certificateWrap h5 {
@@ -253,7 +278,8 @@ a,
   .navbar {
     padding: 0px 10px !important;
   }
-  .navbar-brand, .nav-item,
+  .navbar-brand,
+  .nav-item,
   .sideMenuWrap {
     margin: 0 !important;
   }

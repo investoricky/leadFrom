@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <nav class="navbar navbar-expand-sm navbar-light sticky-top">
-      <a class="navbar-brand ml-5" href="#">LEAD<span class="origin">FROM</span></a>
+      <a class="navbar-brand ml-5" href="#"
+        >LEAD<span class="origin">FROM</span></a
+      >
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item ml-4">
           <div class="dropdown">
@@ -9,68 +11,90 @@
               <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
             <div class="dropdown-content px-2 py-1">
-              <button on:click="logOut">Log Out</button>
+              <button @click="logOut">Log Out</button>
             </div>
           </div>
         </li>
       </ul>
     </nav>
+
     <div class="userProfile d-md-flex d-sm-block justify-content-between">
       <div class="userDetailSection">
         <div class="userInfo">
+          <div class="alert alert-success mb-5 d-none">
+            Congrats!! Your application for Certificate of Origin was
+            Successful. A link will be sent to your mail when application is
+            approved.
+          </div>
           <div class="d-flex detailText">
-            <p class="firstName mr-auto px-5 py-2 text-muted">First Name</p>
-            <p class="nameBorder py-2 text-muted">{{ user }}</p>
-            <div>{{ user }}</div>
+            <p class="firstName mr-auto px-5 py-2 text-muted">Full Name</p>
+            <p class="nameBorder py-2 text-muted">{{ user.name }}</p>
           </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Last Name</p>
-            <p class="nameBorder py-2 text-muted">Doe</p>
-          </div>
+
           <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Phone Number</p>
             <p class="nameBorder py-2 text-muted">090**********</p>
           </div>
           <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Email</p>
-            <p class="nameBorder text py-2 text-muted">Johndoe@gmail.com</p>
+            <p class="nameBorder text py-2 text-muted">{{ user.email }}</p>
+          </div>
+          <div class="d-flex detailText">
+            <p class="firstName mr-auto px-5 py-2 text-muted">ID</p>
+            <p class="nameBorder py-2 text-muted">{{ user.id }}</p>
           </div>
           <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Payment Status</p>
             <p class="nameBorder text py-2 text-muted">Not Paid</p>
           </div>
-          <modalBtn />
+
+          <!-- <modalBtn /> -->
         </div>
       </div>
       <div class="sideMenuWrap ml-5 px-2 py-3">
         <div class="certificateWrap d-flex">
           <div class="div">
-            <img src="@/assets/certificate-icon.png" alt="image">
+            <img src="@/assets/certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Certificate of Origin</h5>
-            <p class="pt-3">Get your Certificate of Origin from your Local Government anywhere you are with ease</p>
-            <a @click="certificateOfOriginPage" href="" class="text-primary">get certificate</a>
+            <p class="pt-3">
+              Get your Certificate of Origin from your Local Government anywhere
+              you are with ease
+            </p>
+            <a @click="certificateOfOriginPage" href="" class="text-primary"
+              >get certificate</a
+            >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/notarization-icon.png" alt="image">
+            <img src="@/assets/notarization-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Tax Payment</h5>
-            <p class="pt-3">Get your Certificate of Origin from your Local Government anywhere you are with ease</p>
-            <a @click="taxPaymentPage" href="" class="text-primary">get certificate</a>
+            <p class="pt-3">
+              Get your Certificate of Origin from your Local Government anywhere
+              you are with ease
+            </p>
+            <a @click="taxPaymentPage" href="" class="text-primary"
+              >get certificate</a
+            >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/birth-certificate-icon.png" alt="image">
+            <img src="@/assets/birth-certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Nigerian Birth Certificate</h5>
-            <p class="pt-3">Get your Birth Certificate from your Local Government anywhere you are with ease</p>
-            <a @click="birthCertificatePage" href="" class="text-primary">get certificate</a>
+            <p class="pt-3">
+              Get your Birth Certificate from your Local Government anywhere you
+              are with ease
+            </p>
+            <a @click="birthCertificatePage" href="" class="text-primary"
+              >get certificate</a
+            >
           </div>
         </div>
       </div>
@@ -79,28 +103,42 @@
 </template>
 
 <script>
-import modalBtn from "../verification/formModal.vue";
+// import modalBtn from "../verification/formModal.vue";
 export default {
   data() {
     return {
-      user: null,
+      user: {
+        name: "",
+        email: "",
+        id: null,
+      },
     };
   },
   mounted() {
-    if (localStorage.getItem("reloaded")) {
-      // The page was just reloaded. Clear the value from local storage
-      // so that it will reload the next time this page is visited.
-      localStorage.removeItem("reloaded");
-    } else {
-      // Set a flag so that we know not to reload the page twice.
-      localStorage.setItem("reloaded", "1");
-      location.reload();
-    }
+    // if (localStorage.getItem("reloaded")) {
+    // The page was just reloaded. Clear the value from local storage
+    // so that it will reload the next time this page is visited.
+    // localStorage.removeItem("reloaded");
+    // } else {
+    // Set a flag so that we know not to reload the page twice.
+    // localStorage.setItem("reloaded", "1");
+    // location.reload();
+    // }
+  },
+  created() {
+    const response = localStorage.getItem("user");
+    const user = JSON.parse(response);
+    console.log(user);
+    this.user.name = user.name;
+    this.user.email = user.email;
+    this.user.id = user.id;
   },
 
   methods: {
     logOut() {
       this.$store.dispatch("logout");
+      localStorage.clear();
+      this.$router.push("/");
     },
     async created() {
       try {
@@ -111,18 +149,27 @@ export default {
         console.log(error);
       }
     },
-      certificateOfOriginPage(){
-        this.$router.replace({path: '/certificateOfOriginPage', query:{name:'next'}})
-      },
-      taxPaymentPage(){
-        this.$router.replace({path: '/taxPaymentPage', query:{name:'next'}})
-      },
-      birthCertificatePage(){
-        this.$router.replace({path: '/birthCertificatePage', query:{name:'next'}})
-      },
+    certificateOfOriginPage() {
+      this.$router.replace({
+        path: "/certificateOfOriginPage",
+        query: { name: "next" },
+      });
+    },
+    taxPaymentPage() {
+      this.$router.replace({
+        path: "/taxPaymentPage",
+        query: { name: "next" },
+      });
+    },
+    birthCertificatePage() {
+      this.$router.replace({
+        path: "/birthCertificatePage",
+        query: { name: "next" },
+      });
+    },
   },
   components: {
-    modalBtn,
+    // modalBtn,
   },
 };
 </script>
@@ -254,10 +301,11 @@ a,
   border: none;
 }
 .certificateWrap img {
-  width: 5rem;
+  width: 3rem;
   background-color: #f7f5ee;
 }
-.certificateWrap p, a {
+.certificateWrap p,
+a {
   font-size: 14px;
 }
 .certificateWrap h5 {
@@ -268,7 +316,8 @@ a,
   .navbar {
     padding: 0px 10px !important;
   }
-  .navbar-brand, .nav-item,
+  .navbar-brand,
+  .nav-item,
   .sideMenuWrap {
     margin: 0 !important;
   }
