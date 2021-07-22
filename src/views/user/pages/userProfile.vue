@@ -11,7 +11,7 @@
               <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
             <div class="dropdown-content px-2 py-1">
-              <button @click="logOut">Log Out</button>
+              <span style="cursor: pointer" @click="logOut">Log Out</span>
             </div>
           </div>
         </li>
@@ -57,17 +57,19 @@
             <img src="@/assets/certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
-            <h5>Certificate of Origin</h5>
+            <h5 @click="certificateOfOriginPage" style="cursor: pointer">
+              Certificate of Origin
+            </h5>
             <p class="pt-3">
               Get your Certificate of Origin from your Local Government anywhere
               you are with ease
             </p>
             <a @click="certificateOfOriginPage" href="" class="text-primary"
-              >get certificate</a
+              >Get Certificate</a
             >
           </div>
         </div>
-        <div class="certificateWrap d-flex mt-3">
+        <div class="certificateWrap d-flex my-5">
           <div class="div">
             <img src="@/assets/notarization-icon.png" alt="image" />
           </div>
@@ -78,7 +80,7 @@
               you are with ease
             </p>
             <a @click="taxPaymentPage" href="" class="text-primary"
-              >get certificate</a
+              >Get Certificate</a
             >
           </div>
         </div>
@@ -93,7 +95,7 @@
               are with ease
             </p>
             <a @click="birthCertificatePage" href="" class="text-primary"
-              >get certificate</a
+              >Get Certificate</a
             >
           </div>
         </div>
@@ -115,15 +117,15 @@ export default {
     };
   },
   mounted() {
-    // if (localStorage.getItem("reloaded")) {
-    // The page was just reloaded. Clear the value from local storage
-    // so that it will reload the next time this page is visited.
-    // localStorage.removeItem("reloaded");
-    // } else {
-    // Set a flag so that we know not to reload the page twice.
-    // localStorage.setItem("reloaded", "1");
-    // location.reload();
-    // }
+    if (localStorage.getItem("reloaded")) {
+      // The page was just reloaded. Clear the value from local storage
+      // so that it will reload the next time this page is visited.
+      localStorage.removeItem("reloaded");
+    } else {
+      // Set a flag so that we know not to reload the page twice.
+      localStorage.setItem("reloaded", "1");
+      location.reload();
+    }
   },
   created() {
     const response = localStorage.getItem("user");
@@ -184,7 +186,8 @@ ul {
   background-color: #fff;
 }
 .navbar-brand {
-  font-size: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 .nav-item a:hover {
   color: #007e33 !important;

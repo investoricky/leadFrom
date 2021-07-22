@@ -162,7 +162,10 @@
                               <div class="input-group">
                                 <div class="input-group-prepend">
                                   <div class="input-group-text" id="emailAddon">
-                                    @
+                                    <i
+                                      class="fa fa-calendar"
+                                      aria-hidden="true"
+                                    ></i>
                                   </div>
                                 </div>
                                 <input
@@ -170,9 +173,11 @@
                                   name="dob"
                                   id="dob"
                                   class="form-control"
-                                  required
+                                  min="1980-01-01"
+                                  max="2021-07-23"
                                   placeholder=""
                                   v-model="personalInfo.dob"
+                                  required
                                 />
                               </div>
                               <div
@@ -253,7 +258,7 @@
                                   </div>
                                 </div>
                                 <input
-                                  type="phone"
+                                  type="tel"
                                   name="phone"
                                   id="phone"
                                   class="form-control"
@@ -370,7 +375,7 @@
                               <label for="nin" class="text-left">NIN</label>
 
                               <input
-                                type="credit-card"
+                                type="number"
                                 name="nin"
                                 id="nin"
                                 class="form-control"
@@ -516,6 +521,7 @@
                 class="btn btn-secondary"
                 type="button"
                 data-bs-dismiss="modal"
+                @click="refreshPage"
               >
                 Close
               </button>
@@ -534,7 +540,7 @@ export default {
       countryCode: "CC", //country code
       countryFlag: "", //country flag
       showFlag: false, //hide flag untill country is selected
-      callCode: "+000", //default call code shown
+      callCode: "+", //default call code shown
       personalInfo: {
         //Personal Info of user
         firstName: "",
@@ -561,6 +567,17 @@ export default {
     };
   },
   methods: {
+    refreshPage() {
+      if (localStorage.getItem("reloaded")) {
+        // The page was just reloaded. Clear the value from local storage
+        // so that it will reload the next time this page is visited.
+        localStorage.removeItem("reloaded");
+      } else {
+        // Set a flag so that we know not to reload the page twice.
+        localStorage.setItem("reloaded", "1");
+        location.reload();
+      }
+    },
     //This function gets value file of user selected image and display it
     previewImage(event) {
       // Reference to the DOM input element

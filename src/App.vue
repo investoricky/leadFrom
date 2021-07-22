@@ -17,6 +17,7 @@ export default {
   mounted() {
     this.tok = this.$store.getters.isLoggedIn;
     this.user = this.$store.getters.getUser;
+    // localStorage.removeItem("user");
   },
 };
 </script>
