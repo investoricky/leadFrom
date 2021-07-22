@@ -17,33 +17,17 @@
     </nav>
     <div class="userProfile d-md-flex d-sm-block justify-content-between">
       <div class="userDetailSection">
-        <div class="userInfo">
-          <div class="d-flex detailText">
-            <p class="firstName mr-auto px-5 py-2 text-muted">First Name</p>
-            <p class="nameBorder py-2 text-muted">{{ user }}</p>
-            <div>{{ user }}</div>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Last Name</p>
-            <p class="nameBorder py-2 text-muted">Doe</p>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Phone Number</p>
-            <p class="nameBorder py-2 text-muted">090**********</p>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Email</p>
-            <p class="nameBorder text py-2 text-muted">Johndoe@gmail.com</p>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Payment Status</p>
-            <p class="nameBorder text py-2 text-muted">Not Paid</p>
-          </div>
-          <modalBtn />
+        <div class="userInfo ml-5">
+          <h3>Tax Payment</h3>
+          <p class="pt-3">
+            Service not yet Implemented
+          </p>
+          <!-- <modalBtn /> -->
         </div>
       </div>
       <div class="sideMenuWrap ml-5 px-2 py-3">
-        <div class="certificateWrap d-flex">
+        <h4 class="text-dark">Select a Service</h4>
+        <div class="certificateWrap d-flex mt-3">
           <div class="div">
             <img src="@/assets/certificate-icon.png" alt="image">
           </div>
@@ -79,7 +63,7 @@
 </template>
 
 <script>
-import modalBtn from "../verification/formModal.vue";
+// import modalBtn from "../verification/formModal.vue";
 export default {
   data() {
     return {
@@ -111,7 +95,7 @@ export default {
         console.log(error);
       }
     },
-      certificateOfOriginPage(){
+    certificateOfOriginPage(){
         this.$router.replace({path: '/certificateOfOriginPage', query:{name:'next'}})
       },
       taxPaymentPage(){
@@ -122,7 +106,7 @@ export default {
       },
   },
   components: {
-    modalBtn,
+    // modalBtn,
   },
 };
 </script>
@@ -202,6 +186,7 @@ ul {
   background-color: #f7f5ee;
   width: 30%;
   height: 50%;
+  /* box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1); */
   border-radius: 5px;
   text-align: start;
 }
@@ -237,7 +222,9 @@ a,
   height: 50%;
 }
 .userInfo {
+  /* border-radius: 5px; */
   text-align: start;
+  font-weight: 100;
 }
 .userInfo input::placeholder {
   text-align: center;
@@ -259,6 +246,7 @@ a,
 }
 .certificateWrap p, a {
   font-size: 14px;
+  /* font-weight: 100; */
 }
 .certificateWrap h5 {
   color: #007e33;
@@ -274,6 +262,9 @@ a,
   }
   .navbar-brand {
     padding-left: 18px !important;
+  }
+  .userInfo {
+    margin-left: 20px !important;
   }
   .logOut {
     display: block;
@@ -326,15 +317,15 @@ a,
   .sideMenuWrap ul {
     display: none;
   }
+  .certificateWrap {
+    padding: 7px !important;
+  }
   .userDetailSection {
     width: 100%;
     margin-top: 30px !important;
   }
   .userDetailHeader {
     text-align: center;
-  }
-  .certificateWrap {
-    padding: 7px !important;
   }
   .detailText,
   .firstName,

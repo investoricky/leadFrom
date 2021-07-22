@@ -17,8 +17,19 @@
     </nav>
     <div class="userProfile d-md-flex d-sm-block justify-content-between">
       <div class="userDetailSection">
-        <div class="userInfo">
-          <div class="d-flex detailText">
+        <div class="userInfo ml-5">
+          <h3>Certificate Of Origin</h3>
+          <p class="pt-3">This is a fraud-deterrent 
+            process that assures it's users certificate authenticity, 
+            and assures them that the copy can be trusted. The process is performed by The Local 
+            Government alongside our team of Tech Experts; 
+            which includes vetting, certifying and record-keeping. 
+          </p>
+          <p>
+            To have this process executed on your behalf, all you need do is click on the button 
+            below and ensure you complete the application process and payment online.
+          </p>
+          <!-- <div class="d-flex detailText">
             <p class="firstName mr-auto px-5 py-2 text-muted">First Name</p>
             <p class="nameBorder py-2 text-muted">{{ user }}</p>
             <div>{{ user }}</div>
@@ -38,12 +49,13 @@
           <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Payment Status</p>
             <p class="nameBorder text py-2 text-muted">Not Paid</p>
-          </div>
+          </div> -->
           <modalBtn />
         </div>
       </div>
       <div class="sideMenuWrap ml-5 px-2 py-3">
-        <div class="certificateWrap d-flex">
+        <h4 class="text-dark">Select a Service</h4>
+        <div class="certificateWrap d-flex mt-3">
           <div class="div">
             <img src="@/assets/certificate-icon.png" alt="image">
           </div>
@@ -111,7 +123,7 @@ export default {
         console.log(error);
       }
     },
-      certificateOfOriginPage(){
+    certificateOfOriginPage(){
         this.$router.replace({path: '/certificateOfOriginPage', query:{name:'next'}})
       },
       taxPaymentPage(){
@@ -202,6 +214,7 @@ ul {
   background-color: #f7f5ee;
   width: 30%;
   height: 50%;
+  /* box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1); */
   border-radius: 5px;
   text-align: start;
 }
@@ -237,7 +250,9 @@ a,
   height: 50%;
 }
 .userInfo {
+  /* border-radius: 5px; */
   text-align: start;
+  font-weight: 100;
 }
 .userInfo input::placeholder {
   text-align: center;
@@ -259,6 +274,7 @@ a,
 }
 .certificateWrap p, a {
   font-size: 14px;
+  /* font-weight: 100; */
 }
 .certificateWrap h5 {
   color: #007e33;
@@ -274,6 +290,9 @@ a,
   }
   .navbar-brand {
     padding-left: 18px !important;
+  }
+  .userInfo {
+    margin-left: 20px !important;
   }
   .logOut {
     display: block;
@@ -326,15 +345,15 @@ a,
   .sideMenuWrap ul {
     display: none;
   }
+  .certificateWrap {
+    padding: 7px !important;
+  }
   .userDetailSection {
     width: 100%;
     margin-top: 30px !important;
   }
   .userDetailHeader {
     text-align: center;
-  }
-  .certificateWrap {
-    padding: 7px !important;
   }
   .detailText,
   .firstName,
