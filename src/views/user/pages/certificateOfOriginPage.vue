@@ -11,7 +11,7 @@
               <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
             <div class="dropdown-content px-2 py-1">
-              <button on:click="logOut">Log Out</button>
+              <button @click="logOut">Log Out</button>
             </div>
           </div>
         </li>
@@ -137,15 +137,20 @@ export default {
     // }
   },
   created() {
-    const user = localStorage.getItem("user");
+    const response = localStorage.getItem("user");
     console.log(user);
-    user.name = this.user.nameuser.email = this.user.email;
+    const user = JSON.parse(response);
+
+    user.name = this.user.name;
+    user.email = this.user.email;
     user.id = this.user.id;
   },
 
   methods: {
     logOut() {
       this.$store.dispatch("logout");
+      localStorage.clear();
+      this.$router.push("/");
     },
     async created() {
       try {
