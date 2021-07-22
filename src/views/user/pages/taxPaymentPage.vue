@@ -1,8 +1,8 @@
 <template>
   <div class="main">
     <nav class="navbar navbar-expand-sm navbar-light sticky-top">
-      <a class="navbar-brand ml-5" href="#"
-        >LEAD<span class="origin">FROM</span></a
+      <router-link to="/" class="navbar-brand ml-5"
+        >LEAD<span class="origin">FROM</span></router-link
       >
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item ml-4">
@@ -23,6 +23,7 @@
           <h3>Tax Payment</h3>
           <p class="pt-3">Service not yet Implemented</p>
           <!-- <modalBtn /> -->
+          <div class="mt-5"><router-link to="/userProfile" class="text-primary routeBtn">back to profile</router-link></div>
         </div>
       </div>
       <div class="sideMenuWrap ml-5 px-2 py-3">
@@ -234,6 +235,10 @@ ul {
 .sideMenuWrap ul li:hover {
   color: #007e32ce !important;
   transition: 1s;
+}
+.routeBtn {
+  font-style: italic;
+  text-decoration: underline !important;
 }
 a,
 .fa-sign-out {
