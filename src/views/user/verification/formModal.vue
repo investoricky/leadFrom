@@ -623,7 +623,7 @@ export default {
     async getLgaInAkwaIbon() {
       try {
         const response = await this.axios.get(
-          "http://locationsng-api.herokuapp.com/api/v1/states/Akwa%20Ibom/lgas"
+          "https://locationsng-api.herokuapp.com/api/v1/states/Akwa%20Ibom/lgas"
         );
         this.akwaIbomLgas = response.data;
 
