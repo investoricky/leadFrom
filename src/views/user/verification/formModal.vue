@@ -434,10 +434,10 @@
                             class="image-preview"
                             v-if="imageData.length > 0"
                           >
-                            <!-- <img :src="imageData" alt="" /> -->
+                            <img :src="imageData" alt="" />
                           </div>
                           <div class="preview">
-                            <img src="@/assets/images/cert2.png" alt="" />
+                            <img src="@/assets/images/template.jpeg" alt="" />
                             <div class="info">
                               <!-- WARNING MESSAGE -->
                               <p>
@@ -494,7 +494,7 @@
                               >
                               LOCAL GIVERNMENT AREA
                             </p>
-                            <p class="pr-4">
+                            <p class="px-4">
                               is an indegene of
                               <span
                                 style="
@@ -720,8 +720,8 @@ button.btn.sw-btn-prev {
   position: absolute;
   width: 100px;
   height: 100px;
-
-  top: 2rem;
+  left: 45%;
+  top: 4rem;
   z-index: 999;
   background-color: transparent;
 }

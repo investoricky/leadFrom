@@ -105,7 +105,7 @@
                 <div class="inputBox">
                   <i class="fas fa-lock"></i>
                   <input
-                    type="password"
+                    :type="InputPasswordType"
                     placeholder="Password"
                     v-model="signup.password"
                     required
@@ -114,11 +114,14 @@
                 <div class="inputBox">
                   <i class="fas fa-lock"></i>
                   <input
-                    type="password"
+                    :type="InputPasswordType"
                     placeholder="Confirm password"
                     required
                     v-model="signup.password_confirmation"
                   />
+                  <!-- <span style="float: right" class="m-4"
+                    ><i class="fa fa-eye float-right" aria-hidden="true"></i
+                  ></span> -->
                 </div>
                 <div class="button inputBox">
                   <button class="login" type="submit">
@@ -154,6 +157,7 @@
 export default {
   data() {
     return {
+      InputPasswordType: "password",
       userLogin: {
         email: null,
         password: null,
@@ -310,7 +314,7 @@ export default {
         Toast2.fire({
           icon: "success",
           iconColor: "green",
-          title: `<small class="bg-success">Welcome ${response.data.user.name}</small>`,
+          title: `<small>Welcome ${response.data.user.name}</small>`,
           background: "#fff",
         });
 

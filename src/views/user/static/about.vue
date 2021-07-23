@@ -1,23 +1,35 @@
 <template>
-  <div class="about-container py-4" id="about">
+  <div class="about-container py-5" id="about">
     <div class="about-writeup align-items-center px-5 py-3">
-      <h1 class="title">About Us</h1>
-      <p class="py-3 text-center">
-        We are an E-Governance platform that offer new opportunities for a more direct and convenient access to governmental services.
-        We bridge the gap between the government and it's citizens by making sure essential services can be easily accessed by it's citizens.
-        We also provide a service that can be accessed remotely and from anywhere in the world thereby expanding the government's reach and
-        generating additional revenue.
+      <h2 class="title pb-0">About Us</h2>
+      <p class="py-5 text-center">
+        We are an E-Governance platform that offer new opportunities for a more
+        direct and convenient access to governmental services. We bridge the gap
+        between the government and it's citizens by making sure essential
+        services can be easily accessed by it's citizens. We also provide a
+        service that can be accessed remotely and from anywhere in the world
+        thereby expanding the government's reach and generating additional
+        revenue.
       </p>
     </div>
-    <div class="logo-section d-flex my-5 align-items-center justify-content-around pl-5">
+    <div
+      class="
+        logo-section
+        d-flex
+        my-5
+        align-items-center
+        justify-content-around
+        pl-5
+      "
+    >
       <div class="logo text-center pl-3 mt-5">
-        <img class="emblem" src="@/assets/emblem.png" alt="image">
+        <img class="emblem" src="@/assets/emblem.png" alt="image" />
       </div>
       <div class="logo text-center pl-5 mt-5">
-        <img class="akisan" src="@/assets/akisan.png" alt="image">
+        <img class="akisan" src="@/assets/akisan.png" alt="image" />
       </div>
       <div class="logo text-center">
-        <img class="starthub" src="@/assets/starthub.png" alt="image">
+        <img class="starthub" src="@/assets/starthub.png" alt="image" />
       </div>
     </div>
   </div>
@@ -25,21 +37,21 @@
 
 <script>
 export default {
-    data(){
-        return{
-
-        }
-    }
-}
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style scoped>
 .about-container {
-  background: #F1F8E9;
+  background-color: #f8f9fa !important;
+
+  padding-top: 5rem !important;
 }
-h1 {
-  color: #1E880D;
-  border-bottom: 3px solid #1E880D;
+h2 {
+  color: #1e880d;
+  border-bottom: 3px solid #1e880d;
   width: fit-content;
   margin: 0 auto;
 }
@@ -57,7 +69,7 @@ p {
 .about::after {
   display: block;
   content: "";
-  width: 4rem;
+  width: 70%;
   height: 0.2rem;
   background-color: rgba(0, 0, 0, 0.5);
   background-color: rgb(99, 179, 99);
@@ -66,7 +78,7 @@ p {
   margin-left: 2rem;
 }
 .logo-section {
-  background: #EEEDEB;
+  background: #eeedeb;
   min-height: 20vh;
 }
 .logo {
