@@ -55,8 +55,8 @@
                 <div class="text">
                   <h6>Safe and Secure Platform</h6>
                   <p>
-                    I had my reservations about using PlatFrom at first, but I
-                    gave it a try and FxHup helped me request and get my
+                    I had my reservations about using LeadFrom at first, but I
+                    gave it a try and tehy helped me request and get my
                     certificates easily.
                   </p>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="text">
                   <h6>Mindblowing Service</h6>
                   <p>
-                    FlatFrom will be one of the most reliable e-governance
+                    LeadFrom will be one of the most reliable e-governance
                     platform. They're solving what seems to be a conundrum.
                   </p>
                 </div>
@@ -115,9 +115,9 @@
                 <div class="text">
                   <h6>Safe and Secure Platform</h6>
                   <p>
-                    I had my reservations about using PlatFrom at first, but I
-                    gave it a try and FxHup helped me request and get my
-                    certificates easily.
+                    I had my reservations about using LeadFrom at first, but I
+                    gave it a try and they helped me request and get my
+                    certificate easily.
                   </p>
                 </div>
                 <div class="text-center image-data">
@@ -134,7 +134,7 @@
                 <div class="text">
                   <h6>Mindblowing Service</h6>
                   <p>
-                    FlatFrom will be one of the most reliable e-governance
+                    LeadFrom will be one of the most reliable e-governance
                     platform. They're solving what seems to be a conundrum.
                   </p>
                 </div>

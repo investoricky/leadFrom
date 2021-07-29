@@ -31,10 +31,10 @@
             <p class="nameBorder py-2 text-muted">{{ user.name }}</p>
           </div>
 
-          <div class="d-flex detailText py-2">
+          <!-- <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Phone Number</p>
             <p class="nameBorder py-2 text-muted">090**********</p>
-          </div>
+          </div> -->
           <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Email</p>
             <p class="nameBorder text py-2 text-muted">{{ user.email }}</p>
@@ -43,10 +43,10 @@
             <p class="firstName mr-auto px-5 py-2 text-muted">ID</p>
             <p class="nameBorder py-2 text-muted">{{ user.id }}</p>
           </div>
-          <div class="d-flex detailText py-2">
+          <!-- <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Payment Status</p>
             <p class="nameBorder text py-2 text-muted">Not Paid</p>
-          </div>
+          </div> -->
 
           <!-- <modalBtn /> -->
         </div>
@@ -80,7 +80,7 @@
               you are with ease
             </p>
             <a @click="taxPaymentPage" href="" class="text-primary"
-              >Get Certificate</a
+              >Pay Tax</a
             >
           </div>
         </div>

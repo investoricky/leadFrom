@@ -12,12 +12,9 @@
         pb-2
       "
     >
-      <div class="certificate-container text-center p-4 mx-2 mb-2">
+      <div class="certificate-container text-center p-4 mx-2 mb-2" data-aos="flip-left">
         <h4>Certificate of Origin</h4>
         <p class="py-3">
-          This is a fraud-deterrent process that assures it's <br />
-          users certificate authenticity, and assures them <br />
-          that the copy can be trusted <br />
           The process is performed by The Local Government <br />
           alongside our team of Tech Experts; <br />
           which includes vetting, certifying and record-keeping.
@@ -29,12 +26,9 @@
           View More
         </div>
       </div>
-      <div class="tax-container text-center p-4 mx-2 mb-2">
+      <div class="tax-container text-center p-4 mx-2 mb-2" data-aos="flip-right">
         <h4>Tax Payment</h4>
         <p class="py-3">
-          This is a fraud-deterrent process that assures it's <br />
-          users certificate authenticity, and assures them <br />
-          that the copy can be trusted <br />
           The process is performed by The Local Government <br />
           alongside our team of Tech Experts; <br />
           which includes vetting, certifying and record-keeping.
@@ -51,13 +45,12 @@
         pb-2
       "
     >
-      <div class="certificate-container text-center p-4 mx-2 mb-2">
+      <div class="certificate-container text-center p-4 mx-2 mb-2" data-aos="flip-up">
         <h4>Birth Certificate</h4>
         <p class="py-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
-          Molestiae distinctio impedit corrupti autem culpa. <br />
-          Eveniet vero quae eius nulla, quaerat ab. Ad alias quaerat, <br />
-          tenetur praesentium molestiae eos consequuntur iure?
+          The process is performed by The Local Government <br />
+          alongside our team of Tech Experts; <br />
+          which includes vetting, certifying and record-keeping.
         </p>
         <div class="btn btn-muted border border-success">View More</div>
       </div>
