@@ -12,13 +12,6 @@
         <div class="pe-lg-5 text-left pt-5" data-aos="fade-right">
 
           <h2 class="mb-4 fw-bold">INTEGRATED LOCAL GOVERNMENT PORTAL</h2>
-
-          <!-- <p class="smaller text-dark">
-            Have you ever had difficulties getting your certificate of origin
-            from your Local Government? We are here to take that load off your
-            chest. With the<span class="origin">PLATFROM</span>, you can get
-            yours right at the comfort of your home.
-          </p> -->
           <p class="smaller text-dark">
             Cutting edge e-governance sysytem that brings you access to all local
             government services with just click of a button.

@@ -1,8 +1,8 @@
 <template>
-  <div class="about-container py-5" id="about" data-aos="fade-up" data-aos-anchor-placement="top-center">
+  <div class="about-container py-5" id="about">
     <div class="about-writeup align-items-center px-5 py-3">
       <h2 class="title pb-0">About Us</h2>
-      <p class="py-5 text-center">
+      <p class="py-5 text-center" data-aos="fade-up" data-aos-anchor-placement="top-center">
         We are an E-Governance platform that offer new opportunities for a more
         direct and convenient access to governmental services. We bridge the gap
         between the government and it's citizens by making sure essential

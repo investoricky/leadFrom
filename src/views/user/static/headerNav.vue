@@ -37,9 +37,6 @@
               >About</a
             >
           </li>
-          <!-- <li class="nav-item mt-3 mt-lg-0 me-lg-5">
-            <a class="nav-link px-0 pb-0" href="#faq" @click="navigate">FAQ</a>
-          </li> -->
           <li class="nav-item mt-3 mt-lg-0">
             <a class="nav-link px-0 pb-0" href="#contact" @click="navigate"
               >Services</a
@@ -87,7 +84,6 @@ export default {
 <style scoped>
 .navbar {
   width: 100%;
-  /* position: fixed; */
   top: 0;
   left: 0;
   z-index: 10;
