@@ -429,7 +429,7 @@
                             class="image-preview"
                             v-if="imageData.length > 0"
                           >
-                            <!-- <img :src="imageData" alt="" /> -->
+                            <img :src="imageData" alt="" />
                           </div>
                           <div class="preview">
                             <img src="@/assets/images/cert2.png" alt="" />
