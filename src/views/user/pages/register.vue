@@ -61,7 +61,7 @@
                     v-if="loginspinner"
                   ></span>
                   <!-- </div> -->
-                  <span v-else>Sign Up</span>
+                  <span v-else>Login</span>
                 </button>
               </div>
               <div class="text signUpText">
@@ -105,7 +105,7 @@
                 <div class="inputBox">
                   <i class="fas fa-lock"></i>
                   <input
-                    type="password"
+                    :type="InputPasswordType"
                     placeholder="Password"
                     v-model="signup.password"
                     required
@@ -114,11 +114,14 @@
                 <div class="inputBox">
                   <i class="fas fa-lock"></i>
                   <input
-                    type="password"
+                    :type="InputPasswordType"
                     placeholder="Confirm password"
                     required
                     v-model="signup.password_confirmation"
                   />
+                  <!-- <span style="float: right" class="m-4"
+                    ><i class="fa fa-eye float-right" aria-hidden="true"></i
+                  ></span> -->
                 </div>
                 <div class="button inputBox">
                   <button class="login" type="submit">
@@ -155,6 +158,7 @@ import api from "@/helpers/api.js";
 export default {
   data() {
     return {
+      InputPasswordType: "password",
       userLogin: {
         email: null,
         password: null,
@@ -319,15 +323,23 @@ export default {
         this.$router.push("/userProfile");
       } catch (error) {
         this.spinner = false;
-        let errorMsg = error.response.data.errors.email[0];
-        console.log(error);
+        let errorMsg = error.response.data.errors;
+        console.log(errorMsg.email);
+        console.log(errorMsg.password);
 
         //triggering the sweetAlert
         Toast.fire({
           icon: "error",
-          title: `<small>${errorMsg}</small>`,
+          title: `<small>${errorMsg.email}</small>`,
           background: "#c5c5c5",
         });
+        if (errorMsg.password) {
+          Toast.fire({
+            icon: "error",
+            title: `<small>${errorMsg.password}</small>`,
+            background: "#c5c5c5",
+          });
+        }
       }
     },
   },

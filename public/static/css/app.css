@@ -55,7 +55,7 @@ h5.form-heading::after {
     color: #000;
     top: 9rem;
     /* background-color: aquamarine; */
-    width: 80%;
+    width: 100%;
     right: 0;
 }
 
@@ -76,6 +76,102 @@ h5.form-heading::after {
     font-size: smaller;
     color: rgba(255, 0, 0, 0.541);
 }
+
+.header-section {
+    height: 90vh;
+    width: 100%;
+    background: no-repeat center center/cover;
+    background-blend-mode: overlay;
+    background-color: rgba(97, 68, 68, 0.309);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.header-section .container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+h2 {
+    font-size: 2.3rem;
+    color: #1c924b;
+}
+
+.origin {
+    color: #1c924b;
+}
+
+.important {
+    color: #1c924b;
+    font-weight: bolder;
+}
+
+.smaller {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #79879A;
+}
+
+.btn {
+    font-weight: 600;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.get-btn {
+    background-color: #1c924b;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    margin-top: 1.5rem;
+    /* border-radius: 30px; */
+}
+
+.get-btn:hover {
+    background-color: #1c924b;
+    color: white;
+}
+
+.cert {
+    width: 100%;
+    height: 65%;
+    border-radius: 0.5rem;
+}
+
+.slideInLeft {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes slideInLeft {
+    0% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
 
 @media (max-width:990px) {
     .userDataDetails {
@@ -100,5 +196,8 @@ h5.form-heading::after {
     }
     .userDataDetails p {
         font-size: smaller;
+    }
+    p {
+        font-size: medium !important;
     }
 }
