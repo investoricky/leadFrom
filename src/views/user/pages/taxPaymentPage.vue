@@ -33,45 +33,45 @@
             <img src="@/assets/certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
-            <h5 @click="certificateOfOriginPage" style="cursor: pointer">
+            <h5 @click="certificateOfOriginPage">
               Certificate of Origin
             </h5>
             <p class="pt-3">
               Get your Certificate of Origin from your Local Government anywhere
               you are with ease
             </p>
-            <a @click="certificateOfOriginPage" href="" class="text-primary"
+            <a @click="certificateOfOriginPage" class="text-primary"
               >Get Certificate</a
             >
           </div>
         </div>
-        <div class="certificateWrap d-flex my-5">
+        <div class="certificateWrap taxWrap d-flex my-5">
           <div class="div">
-            <img src="@/assets/notarization-icon.png" alt="image" />
+            <img src="@/assets/taxx.png" alt="image" />
           </div>
-          <div class="writeUpWrap ml-3">
-            <h5 @click="taxPaymentPage" style="cursor: pointer">Tax Payment</h5>
+          <div class="writeUpWrap ml-4">
+            <h5 @click="taxPaymentPage">Tax Payment</h5>
             <p class="pt-3">
-              Pay Taxes from the comfort of your homes. Feature Coming Soon....
+              Pay Taxes from the comfort of your home. Feature Coming Soon....
             </p>
-            <a @click="taxPaymentPage" href="" class="text-primary"
-              >Pay Taxes</a
+            <a @click="taxPaymentPage" class="text-primary"
+              >Pay Tax</a
             >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/birth-certificate-icon.png" alt="image" />
+            <img src="@/assets/birth.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
-            <h5 @click="birthCertificatePage" style="cursor: pointer">
+            <h5 @click="birthCertificatePage">
               Nigerian Birth Certificate
             </h5>
             <p class="pt-3">
               Get your Birth Certificate from your Local Government anywhere you
               are with ease
             </p>
-            <a @click="birthCertificatePage" href="" class="text-primary"
+            <a @click="birthCertificatePage" class="text-primary"
               >Make Request</a
             >
           </div>
@@ -217,7 +217,6 @@ ul {
   background-color: #f7f5ee;
   width: 30%;
   height: 50%;
-  /* box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1); */
   border-radius: 5px;
   text-align: start;
 }
@@ -246,18 +245,15 @@ ul {
   font-style: italic;
   text-decoration: underline !important;
 }
-a,
-.fa-sign-out {
-  text-decoration: none !important;
-  color: #000;
-  border-bottom: none !important;
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
 .userDetailSection {
   width: 69%;
   height: 50%;
 }
 .userInfo {
-  /* border-radius: 5px; */
   text-align: start;
   font-weight: 100;
 }
@@ -279,12 +275,19 @@ a,
   width: 3rem;
   background-color: #f7f5ee;
 }
+.taxWrap img {
+  width: 2.3rem;
+  background-color: #f7f5ee;
+}
 .certificateWrap p,
 a {
   font-size: 14px;
-  /* font-weight: 100; */
 }
 .certificateWrap h5 {
+  color: #007e33;
+  cursor: pointer;
+}
+.userInfo h3 {
   color: #007e33;
 }
 

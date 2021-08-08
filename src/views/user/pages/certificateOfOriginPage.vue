@@ -20,13 +20,11 @@
     <div class="userProfile d-md-flex d-sm-block justify-content-between">
       <div class="userDetailSection">
         <div class="userInfo ml-5">
-          <h3 style="">Certificate Of Origin</h3>
+          <h3>Certificate Of Origin</h3>
           <p class="pt-4 w-75">
-            This is a fraud-deterrent process that assures it's users
-            certificate authenticity, and assures them that the copy can be
-            trusted. The process is performed by The Local Government alongside
-            our team of Tech Experts; which includes vetting, certifying and
-            record-keeping.
+            The process is performed by The Local Government
+            alongside our team of Tech Experts; 
+            which includes vetting, certifying and record-keeping.
           </p>
           <p class="pt-4 w-75">
             To have this process executed on your behalf, all you need do is
@@ -38,28 +36,6 @@
             <modalBtn class="mt-5 ml-auto mr-auto" />
             <div class="float-right"><router-link to="/userProfile" class="text-primary routeBtn">back to profile</router-link></div>
           </div>
-
-          <!-- <div class="d-flex detailText">
-            <p class="firstName mr-auto px-5 py-2 text-muted">First Name</p>
-            <p class="nameBorder py-2 text-muted">{{ user }}</p>
-            <div>{{ user }}</div>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Last Name</p>
-            <p class="nameBorder py-2 text-muted">Doe</p>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Phone Number</p>
-            <p class="nameBorder py-2 text-muted">090**********</p>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Email</p>
-            <p class="nameBorder text py-2 text-muted">Johndoe@gmail.com</p>
-          </div>
-          <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Payment Status</p>
-            <p class="nameBorder text py-2 text-muted">Not Paid</p>
-          </div> -->
         </div>
       </div>
       <div class="sideMenuWrap ml-5 px-2 py-3">
@@ -69,46 +45,46 @@
             <img src="@/assets/certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
-            <h5 @click="certificateOfOriginPage" style="cursor: pointer">
+            <h5 @click="certificateOfOriginPage">
               Certificate of Origin
             </h5>
             <p class="pt-3">
               Get your Certificate of Origin from your Local Government anywhere
               you are with ease
             </p>
-            <a @click="certificateOfOriginPage" href="" class="text-primary"
+            <a @click="certificateOfOriginPage" class="text-primary"
               >Get Certificate</a
             >
           </div>
         </div>
-        <div class="certificateWrap d-flex my-5">
+        <div class="certificateWrap taxWrap d-flex my-5">
           <div class="div">
-            <img src="@/assets/notarization-icon.png" alt="image" />
+            <img src="@/assets/taxx.png" alt="image" />
           </div>
-          <div class="writeUpWrap ml-3">
-            <h5 @click="taxPaymentPage" style="cursor: pointer">Tax Payment</h5>
+          <div class="writeUpWrap ml-4">
+            <h5 @click="taxPaymentPage">Tax Payment</h5>
             <p class="pt-3">
-              Pay Taxes from the comfort of your homes. Feature Coming Soon....
+              Pay Taxes from the comfort of your home. Feature Coming Soon....
             </p>
-            <a @click="taxPaymentPage" href="" class="text-primary"
-              >Pay Taxes</a
+            <a @click="taxPaymentPage" class="text-primary"
+              >Pay Tax</a
             >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/birth-certificate-icon.png" alt="image" />
+            <img src="@/assets/birth.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
-            <h5 @click="birthCertificatePage" style="cursor: pointer">
+            <h5 @click="birthCertificatePage">
               Nigerian Birth Certificate
             </h5>
             <p class="pt-3">
               Get your Birth Certificate from your Local Government anywhere you
               are with ease
             </p>
-            <a @click="birthCertificatePage" href="" class="text-primary"
-              >get certificate</a
+            <a @click="birthCertificatePage" class="text-primary"
+              >Make Request</a
             >
           </div>
         </div>
@@ -266,7 +242,6 @@ ul {
   background-color: #f7f5ee;
   width: 30%;
   height: 50%;
-  /* box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1); */
   border-radius: 5px;
   text-align: start;
 }
@@ -295,18 +270,14 @@ ul {
   font-style: italic;
   text-decoration: underline !important;
 }
-a,
-.fa-sign-out {
-  text-decoration: none !important;
-  color: #000;
-  border-bottom: none !important;
+a {
+  cursor: pointer;
 }
 .userDetailSection {
   width: 69%;
   height: 50%;
 }
 .userInfo {
-  /* border-radius: 5px; */
   text-align: start;
   font-weight: 100;
 }
@@ -328,12 +299,19 @@ a,
   width: 3rem;
   background-color: #f7f5ee;
 }
+.taxWrap img {
+  width: 2.3rem;
+  background-color: #f7f5ee;
+}
 .certificateWrap p,
 a {
   font-size: 14px;
-  /* font-weight: 100; */
 }
 .certificateWrap h5 {
+  color: #007e33;
+  cursor: pointer;
+}
+.userInfo h3 {
   color: #007e33;
 }
 

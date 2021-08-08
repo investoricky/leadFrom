@@ -1,58 +1,33 @@
 <template>
   <div class="services-container" id="services">
     <h2 class="services mb-4">Services</h2>
-    <div
-      class="
-        d-md-flex d-sm-block
-        align-items-center
-        justify-content-center
-        service-content
-        px-3
-        pt-4
-        pb-2
-      "
-    >
-      <div class="certificate-container text-center p-4 mx-2 mb-2" data-aos="flip-left">
+    <div class="d-md-flex d-sm-block align-items-center justify-content-center service-content px-3 pt-4 pb-2">
+      <div class="certificate-container text-center p-4 mx-2 mb-2" data-aos="fade-zoom-in">
+        <img src="@/assets/certificate-icon.png" alt="image" />
         <h4>Certificate of Origin</h4>
         <p class="py-3">
           The process is performed by The Local Government <br />
           alongside our team of Tech Experts; <br />
           which includes vetting, certifying and record-keeping.
         </p>
-        <div
-          class="btn btn-muted border border-success"
-          @click="goToDetailsPage"
-        >
-          View More
-        </div>
       </div>
-      <div class="tax-container text-center p-4 mx-2 mb-2" data-aos="flip-right">
-        <h4>Tax Payment</h4>
-        <p class="py-3">
-          The process is performed by The Local Government <br />
-          alongside our team of Tech Experts; <br />
-          which includes vetting, certifying and record-keeping.
-        </p>
-        <div class="btn btn-muted border border-success">View More</div>
-      </div>
-    </div>
-    <div
-      class="
-        d-md-flex d-sm-block
-        align-items-center
-        justify-content-center
-        px-3
-        pb-2
-      "
-    >
-      <div class="certificate-container text-center p-4 mx-2 mb-2" data-aos="flip-up">
+      <div class="certificate-container text-center p-4 mx-2 mb-2" data-aos="fade-zoom-in">
+        <img src="@/assets/birth.png" alt="image" />
         <h4>Birth Certificate</h4>
         <p class="py-3">
           The process is performed by The Local Government <br />
           alongside our team of Tech Experts; <br />
           which includes vetting, certifying and record-keeping.
         </p>
-        <div class="btn btn-muted border border-success">View More</div>
+      </div>
+      <div class="tax-container text-center p-4 mx-2 mb-2" data-aos="fade-zoom-in">
+        <img src="@/assets/taxx.png" alt="image" />
+        <h4>Tax Payment</h4>
+        <p class="py-3">
+          The process is performed by The Local Government <br />
+          alongside our team of Tech Experts; <br />
+          which includes vetting, certifying and record-keeping.
+        </p>
       </div>
     </div>
   </div>
@@ -76,7 +51,11 @@ export default {
   background-color: #f8f9fa !important;
 
   min-height: 50vh;
-  padding-bottom: 5rem;
+  padding: 2rem 5rem;
+}
+h4 {
+  color: #1e880d;
+  padding-top: 20px !important;
 }
 .services {
   font-weight: 500;
@@ -91,7 +70,12 @@ export default {
   background: #eeedeb;
   height: max-content;
   border-radius: 10px;
-  /* box-shadow: 0 0px 5px rgba(51, 51, 51, 0.282); */
+}
+.certificate-container img {
+  width: 3rem;
+}
+.tax-container img {
+  width: 2.3rem;
 }
 @media screen and (max-width: 768px) {
   .service-content {
@@ -99,6 +83,13 @@ export default {
   }
   p {
     font-size: 17px;
+  }
+  .services-container {
+    padding: 3px;
+  }
+  .certificate-container,
+  .tax-container {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
   }
 }
 </style>

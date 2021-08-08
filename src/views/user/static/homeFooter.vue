@@ -11,14 +11,14 @@
             type="text"
             name=""
             id=""
-            class="w-50 py-2 mr-4"
+            class="w-100 py-2"
             placeholder="FULL NAME"
           /><input
             type="email"
             name=""
             placeholder="EMAIL"
             id=""
-            class="w-50 my-3 py-2"
+            class="w-100 my-3 py-2"
           />
           <input
             type="number"

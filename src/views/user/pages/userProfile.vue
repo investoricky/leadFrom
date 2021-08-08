@@ -30,24 +30,10 @@
             <p class="firstName mr-auto px-5 py-2 text-muted">Full Name</p>
             <p class="nameBorder py-2 text-muted">{{ user.name }}</p>
           </div>
-
-          <!-- <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Phone Number</p>
-            <p class="nameBorder py-2 text-muted">090**********</p>
-          </div> -->
           <div class="d-flex detailText py-2">
             <p class="firstName mr-auto px-5 py-2 text-muted">Email</p>
             <p class="nameBorder text py-2 text-muted">{{ user.email }}</p>
           </div>
-          <div class="d-flex detailText">
-            <p class="firstName mr-auto px-5 py-2 text-muted">ID</p>
-            <p class="nameBorder py-2 text-muted">{{ user.id }}</p>
-          </div>
-          <!-- <div class="d-flex detailText py-2">
-            <p class="firstName mr-auto px-5 py-2 text-muted">Payment Status</p>
-            <p class="nameBorder text py-2 text-muted">Not Paid</p>
-          </div> -->
-
           <!-- <modalBtn /> -->
         </div>
       </div>
@@ -57,36 +43,35 @@
             <img src="@/assets/certificate-icon.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
-            <h5 @click="certificateOfOriginPage" style="cursor: pointer">
+            <h5 @click="certificateOfOriginPage">
               Certificate of Origin
             </h5>
             <p class="pt-3">
               Get your Certificate of Origin from your Local Government anywhere
               you are with ease
             </p>
-            <a @click="certificateOfOriginPage" href="" class="text-primary"
+            <a @click="certificateOfOriginPage" class="text-primary"
               >Get Certificate</a
             >
           </div>
         </div>
-        <div class="certificateWrap d-flex my-5">
+        <div class="certificateWrap taxWrap d-flex my-5">
           <div class="div">
-            <img src="@/assets/notarization-icon.png" alt="image" />
+            <img src="@/assets/taxx.png" alt="image" />
           </div>
-          <div class="writeUpWrap ml-3">
+          <div class="writeUpWrap ml-4">
             <h5>Tax Payment</h5>
             <p class="pt-3">
-              Get your Certificate of Origin from your Local Government anywhere
-              you are with ease
+              Pay taxes from the comfort of your home. Feature coming soon...
             </p>
-            <a @click="taxPaymentPage" href="" class="text-primary"
+            <a @click="taxPaymentPage" class="text-primary"
               >Pay Tax</a
             >
           </div>
         </div>
         <div class="certificateWrap d-flex mt-3">
           <div class="div">
-            <img src="@/assets/birth-certificate-icon.png" alt="image" />
+            <img src="@/assets/birth.png" alt="image" />
           </div>
           <div class="writeUpWrap ml-3">
             <h5>Nigerian Birth Certificate</h5>
@@ -94,7 +79,7 @@
               Get your Birth Certificate from your Local Government anywhere you
               are with ease
             </p>
-            <a @click="birthCertificatePage" href="" class="text-primary"
+            <a @click="birthCertificatePage" class="text-primary"
               >Get Certificate</a
             >
           </div>
@@ -112,7 +97,7 @@ export default {
       user: {
         name: "",
         email: "",
-        id: null,
+        // id: null,
       },
     };
   },
@@ -133,7 +118,7 @@ export default {
     console.log(user);
     this.user.name = user.name;
     this.user.email = user.email;
-    this.user.id = user.id;
+    // this.user.id = user.id;
   },
 
   methods: {
@@ -276,11 +261,9 @@ ul {
   color: #007e32ce !important;
   transition: 1s;
 }
-a,
-.fa-sign-out {
+a {
   text-decoration: none !important;
-  color: #000;
-  border-bottom: none !important;
+  cursor: pointer;
 }
 .userDetailSection {
   width: 69%;
@@ -307,12 +290,17 @@ a,
   width: 3rem;
   background-color: #f7f5ee;
 }
+.taxWrap img {
+  width: 2.3rem;
+  background-color: #f7f5ee;
+}
 .certificateWrap p,
 a {
   font-size: 14px;
 }
 .certificateWrap h5 {
   color: #007e33;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

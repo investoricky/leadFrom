@@ -92,8 +92,6 @@ h5.form-heading::after {
 .header-section .container {
     display: grid;
     grid-template-columns: 50% 50%;
-    /* justify-content: center;
-    align-items: center; */
 }
 
 h2 {
@@ -128,7 +126,6 @@ h2 {
     font-size: 1.5rem;
     padding: 0.6rem 1.5rem;
     margin-top: 1.5rem;
-    /* border-radius: 30px; */
 }
 
 .get-btn:hover {
@@ -141,37 +138,6 @@ h2 {
     height: 65%;
     border-radius: 0.5rem;
 }
-
-.slideInLeft {
-    -webkit-animation-name: slideInLeft;
-    animation-name: slideInLeft;
-    -webkit-animation-duration: 5s;
-    animation-duration: 5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-@-webkit-keyframes slideInLeft {
-    0% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideInLeft {
-    0% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-      visibility: visible;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-  }
 
 @media (max-width:990px) {
     .userDataDetails {

@@ -11,7 +11,6 @@ import '../src/utils/http'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-
 Vue.use(AOS);
 Vue.use(VueSweetalert2);
 Vue.use(VueAxios, axios)

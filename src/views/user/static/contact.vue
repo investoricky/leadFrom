@@ -226,7 +226,7 @@ label{
 }
 
 .contact-form{
-  width: 90vw;
+  width: 100vw;
   padding: 1.5rem;
 }
 
