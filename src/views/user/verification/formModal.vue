@@ -656,7 +656,7 @@ export default {
       FlutterwaveCheckout({
         public_key: "FLWPUBK_TEST-17d61118dad1cc2518d8235b90003f78-X",
         tx_ref: "LEADFROM" + Math.floor(Math.random() * 1000000000 + 1),
-        amount: 200,
+        amount: 2200,
         currency: "NGN",
         customer: {
           email: this.personalInfo.email,

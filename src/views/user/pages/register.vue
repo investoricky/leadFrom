@@ -154,6 +154,7 @@
 </template>
 
 <script>
+import api from "@/helpers/api.js";
 export default {
   data() {
     return {
@@ -267,12 +268,12 @@ export default {
     },
 
     async signUp() {
-      const data = {
-        name: this.signup.name,
-        email: this.signup.email,
-        password: this.signup.password,
-        password_confirmation: this.signup.password_confirmation,
-      };
+      // const data = {
+      //   name: this.signup.name,
+      //   email: this.signup.email,
+      //   password: this.signup.password,
+      //   password_confirmation: this.signup.password_confirmation,
+      // };
 
       //Toast function for default styled alert
       const Toast = this.$swal.mixin({
@@ -303,12 +304,12 @@ export default {
       });
       try {
         this.spinner = true;
-        let response = await this.axios.post("register", data);
+        let response = await api.register(this.signup);
 
-        const user = response.data.user;
-        const token = response.data.token;
-        localStorage.setItem("user", JSON.stringify(user));
-        localStorage.setItem("jwt", JSON.stringify(token));
+        // const user = response.data.user;
+        // const token = response.data.token;
+        // localStorage.setItem("user", JSON.stringify(user));
+        // localStorage.setItem("jwt", JSON.stringify(token));
 
         //Trigger toast alert for successful sign up
         Toast2.fire({
@@ -627,7 +628,6 @@ form .formContent .signUpForm {
 
     font-size: small;
   }
-
   .error {
     right: 0rem;
     left: 06rem;
