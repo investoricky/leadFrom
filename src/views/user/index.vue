@@ -1,12 +1,12 @@
 <template>
   <div>
+    <i class="fa  fa-2x fa-arrow-up scrollTop" onclick="scrollToTop();" aria-hidden="true"></i>
     <headerNav class="header" />
     <home />
     <about />
     <services />
     <remarks />
     <homeFooter />
-    <!-- <h1>This is the User Page</h1> -->
   </div>
 </template>
 

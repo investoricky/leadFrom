@@ -138,6 +138,30 @@ h2 {
     height: 65%;
     border-radius: 0.5rem;
 }
+.scrollTop {
+    position: fixed;
+    bottom: 800px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #79879a54;
+    color: #007e33;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrollTop.active {
+    bottom: 40px;
+    visibility: visible;
+    opacity: 1;
+}
 
 @media (max-width:990px) {
     .userDataDetails {
