@@ -359,7 +359,7 @@ export default {
   position: relative;
   max-width: 850px;
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff !important; */
   padding: 40px 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
@@ -590,10 +590,17 @@ form .formContent .signUpForm {
 .loginWrap #flip {
   display: none;
 }
+
+@media(min-width: 768px){
+  .loginWrap{
+    background-color: #fff !important;
+  }
+}
 @media (max-width: 768px) {
   .px-5 {
     padding: 30px 10px !important;
   }
+  
   .loginWrap .cover {
     display: none;
   }
