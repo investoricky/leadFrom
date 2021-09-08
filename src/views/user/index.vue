@@ -1,6 +1,6 @@
 <template>
   <div>
-    <i class="fa  fa-2x fa-arrow-up scrollTop" onclick="scrollToTop();" aria-hidden="true"></i>
+    <i class="fa fa-arrow-up scrollTop" onclick="scrollToTop();" aria-hidden="true"></i>
     <headerNav class="header" />
     <home />
     <about />

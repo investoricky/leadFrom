@@ -21,6 +21,10 @@ a.nav-link.inactive.active::after, a.nav-link.inactive.active::before {
     background-color: #28a745 !important;
 }
 
+.fa-arrow-up {
+ font-size: 25px;
+}
+
 h5.form-heading {
     position: relative;
     width: max-content;
@@ -142,9 +146,9 @@ h2 {
     position: fixed;
     bottom: 800px;
     right: 40px;
-    width: 60px;
-    height: 60px;
-    border-radius: 10%;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
