@@ -12,17 +12,17 @@
       <input type="checkbox" id="flip" />
       <div class="cover">
         <div class="front">
-          <img class="backImg" src="@/assets/lady.jpg" alt="image" />
+          <img class="backImg" src="@/assets/images/globe.jpg" alt="image" />
           <div class="text">
-            <span class="text1">Every new friend is a new adventure</span>
-            <span class="text2">Let's get connected</span>
+            <!-- <span class="text1 px-1">Every new friend is a new adventure</span>
+            <span class="text2">Let's get connected</span> -->
           </div>
         </div>
         <div class="back">
           <img class="backImg" src="@/assets/lady2.jpg" alt="image" />
           <div class="text">
-            <span class="text1">Complete miles of journey with one step</span>
-            <span class="text2">Let's get started</span>
+            <!-- <span class="text1">Complete miles of journey with one step</span>
+            <span class="text2">Let's get started</span> -->
           </div>
         </div>
       </div>
