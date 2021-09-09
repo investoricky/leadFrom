@@ -359,7 +359,7 @@ export default {
   position: relative;
   max-width: 850px;
   width: 100%;
-  /* background-color: #fff !important; */
+  background-color: #fff !important;
   padding: 40px 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
@@ -628,7 +628,7 @@ form .formContent .signUpForm {
   }
   form .formContent .title[data-v-1102e7b0] {
     width: max-content;
-    margin: 0px auto;
+    /* margin: 0px auto; */
   }
   .formContent .inputBox i[data-v-1102e7b0] {
     margin-left: 0.6rem;
