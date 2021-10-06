@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="test1">
-        <h2>Testimonials</h2>
+        <h2 class="testimonials">Testimonials</h2>
         <p class="px-4">We have been working with clients all over the world</p>
       </div>
       <div

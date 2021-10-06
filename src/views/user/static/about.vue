@@ -1,14 +1,12 @@
 <template>
   <div class="about-container py-5" id="about">
     <div class="about-writeup align-items-center px-5 py-3">
-      <h2 class="title pb-0">About Us</h2>
+      <h2 class="title about pb-0">About Us</h2>
       <p class="py-5 text-center" data-aos="fade-up" data-aos-anchor-placement="top-center">
-        We are an E-Governance platform that offer new opportunities for a more
-        direct and convenient access to governmental services. We bridge the gap
-        between the government and it's citizens by making sure essential
-        services can be easily accessed by it's citizens. We also provide a
+        We provide an infrastructure that makes the delivery of government services 
+        easier and convenient for both the citizen and the government. We also provide a
         service that can be accessed remotely and from anywhere in the world
-        thereby expanding the government's reach and generating additional
+        thereby aiding the government to expand it's reach and also generating additional
         revenue.
       </p>
     </div>
@@ -51,7 +49,7 @@ export default {
 }
 h2 {
   color: #1e880d;
-  border-bottom: 3px solid #1e880d;
+  /* border-bottom: 3px solid #1e880d; */
   width: fit-content;
   margin: 0 auto;
 }
@@ -70,12 +68,11 @@ p {
   display: block;
   content: "";
   width: 70%;
-  height: 0.2rem;
+  height: 0.27rem;
   background-color: rgba(0, 0, 0, 0.5);
-  background-color: rgb(99, 179, 99);
-  margin-top: 0.8rem;
-  margin-bottom: 3rem;
-  margin-left: 2rem;
+  background-color:  #1e880d;
+  margin-top: 0.1rem;
+  margin-left: 1.5rem;
 }
 .logo-section {
   background: #eeedeb;
@@ -103,12 +100,12 @@ p {
   p {
     font-size: 13px;
   }
-  .title::before {
+  /* .title::before {
     display: none;
   }
   .about::after {
     margin-left: 0;
-  }
+  } */
   .logo-section {
     padding: 10px 0px !important;
   }

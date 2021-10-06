@@ -89,7 +89,10 @@ export default {
   z-index: 10;
   box-shadow: 0 0.2rem 0.8rem rgba(95, 95, 95, 0.575);
 }
-
+/* .container img {
+  width: 100px;
+  border-radius: 50%;
+} */
 .navbar a {
   color: black;
   font-weight: bold;

@@ -13,7 +13,7 @@
 
           <h2 class="mb-4 fw-bold">INTEGRATED LOCAL GOVERNMENT PORTAL</h2>
           <p class="smaller text-dark">
-            Cutting edge e-governance sysytem that brings you access to all local
+            Cutting edge e-governance sytem that brings you access to all local
             government services with just click of a button.
             From getting your <span class="origin">Certificate of Origin</span> to 
             <span class="origin">Paying your Taxes.</span> Your Journey of convinience begins now

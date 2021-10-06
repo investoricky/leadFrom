@@ -32,12 +32,12 @@
             name=""
             id=""
             class="py-5 my-3"
-            placeholder="YOUR MESSAGE"
+            placeholder="YOUR MESSAGE" 
           />
           <button class="btn btn-success">Contact Us</button>
         </div>
         <div class="col-md-6 two">
-          <h4 class="text-one mb-5">Platfrom Group</h4>
+          <h4 class="text-one mb-5">Leadfrom Group</h4>
           <div class="d-flex">
             <div><i class="fa fa-location-arrow" aria-hidden="true"></i></div>
             <div>

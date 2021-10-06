@@ -60,10 +60,19 @@ h4 {
 .services {
   font-weight: 500;
   color: #1e880d;
-  border-bottom: 3px solid #1e880d;
   width: fit-content;
   text-align: center;
   margin: 0 auto;
+}
+.services::after {
+  display: block;
+  content: "";
+  width: 70%;
+  height: 0.27rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color:  #1e880d;
+  margin-top: 0.1rem;
+  margin-left: 1.5rem;
 }
 .certificate-container,
 .tax-container {
